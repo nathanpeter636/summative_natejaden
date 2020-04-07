@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Axios from "axios";
-
+import "../css/home.css"
+import { IoMdAdd } from "react-icons/io";
 
 
 class Home extends React.Component {
@@ -34,24 +35,67 @@ class Home extends React.Component {
 
     render() {
         return (
+
+
+
+
             <div>
 
-                <p>Freebies</p>
-
-                {this.state.listings.map((item, i) => {
-                    return (
-                        <Showdata
-
-                            key={i}
-                            title={item.Title}
-                            category={item.Category}
-                            phone={item.Phone}
-                            description={item.Description}
+                <header>
+                    <h1>DoNate</h1>
 
 
-                        />
-                    )
-                })}
+                    
+
+
+                </header>
+
+                <div className="Message_container">
+                <h2>Give and recieve <br />
+                    multiple items
+                 throughtout <br /> 
+                 NZ for those in need.
+                    </h2>
+
+                  
+
+                </div>
+
+
+
+                <div className='home_listing_wrap'>
+
+                <input
+                        placeholder="Type Something..."
+                        className="autocomplete"
+                        type="text"
+
+                    />
+
+                    <div className='add_listing'>
+
+                       
+                        <IoMdAdd style={{ color: "#00ff55", fontSize: "7.8em" }}/>
+                        <p>Share with others</p>
+                    </div>
+
+                    {this.state.listings.map((item, i) => {
+                        return (
+                            <Showdata
+
+                                key={i}
+                                title={item.Title}
+                                category={item.Category}
+                                phone={item.Phone}
+                                description={item.Description}
+
+
+                            />
+                        )
+                    })}
+
+
+                </div>
 
             </div>
         )
@@ -79,14 +123,15 @@ export class Showdata extends React.Component {
 
 
 
-
-
-
-
     render() {
         return (
-            <React.Fragment>
 
+
+
+
+
+
+            <div className='data_container'>
 
                 <h1>
 
@@ -97,11 +142,15 @@ export class Showdata extends React.Component {
                 <h1>{this.props.category}</h1>
 
 
+            </div>
 
 
 
 
-            </React.Fragment>
+
+
+
+
         )
     }
 }
