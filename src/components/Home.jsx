@@ -4,6 +4,7 @@ import "../css/home.css"
 import { IoMdAdd } from "react-icons/io";
 
 
+
 class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -41,36 +42,33 @@ class Home extends React.Component {
 
             <div>
 
-                <header>
-                    <h1>DoNate</h1>
-
-
-                    
-
-
-                </header>
+             
 
                 <div className="Message_container">
+
+               <p>hello</p>
+
+
                 <h2>Give and recieve <br />
                     multiple items
                  throughtout <br /> 
                  NZ for those in need.
                     </h2>
 
-                  
-
-                </div>
-
-
-
-                <div className='home_listing_wrap'>
-
-                <input
+                    <input
                         placeholder="Type Something..."
                         className="autocomplete"
                         type="text"
 
                     />
+
+                </div>
+
+                <h2 style={{ color: "black", fontSize: "1rem", textAlign: 'center' }}>123 Total Listings</h2>
+
+                <div className='home_listing_wrap'>
+
+                
 
                     <div className='add_listing'>
 
@@ -133,13 +131,13 @@ export class Showdata extends React.Component {
 
             <div className='data_container'>
 
-                <h1>
+                <h2>
 
                     {this.props.title}
 
-                </h1>
+                </h2>
 
-                <h1>{this.props.category}</h1>
+                <h2>{this.props.category}</h2>
 
 
             </div>

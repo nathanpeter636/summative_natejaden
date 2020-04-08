@@ -1,5 +1,9 @@
 
-header {
+body {
+    background-color: rgb(248, 248, 248);
+}
+
+/* header {
     height: 80px;
     width: 100vw;
     display: flex;
@@ -7,9 +11,15 @@ header {
    
     align-items: center;
     background-color: #ffffff;
+
+    
+
+    
+
     
     
-}
+    
+} */
 
 .add_listing {
     display: flex;
@@ -18,12 +28,12 @@ header {
     align-items: center;
     border: #00ff55;
     margin: 2%;
-    width: 45vw;    
+    width: 40vw;    
     height: 70vw;
     border-radius: 20px;
-    background-color: #eafff1 ;
+    background-color: rgb(238, 252, 255) ;
 
-    border: 3px solid #00ff55;
+    border: 1px solid #00ff55;
     
 }
 
@@ -31,7 +41,7 @@ header {
 
 
 .home_listing_wrap {
-	
+
     display: flex;
    
     flex-wrap: wrap;
@@ -50,6 +60,7 @@ header {
    
     justify-content: center;
     margin: 20%;
+    
   
 }
 
@@ -60,11 +71,11 @@ header {
     box-shadow: 0px 2px 5px 1px #cccccc;
    
     margin: 2%;
-    width: 45vw;    
+    width: 40vw;    
     height: 70vw;
     box-shadow: black;
-    background-image: linear-gradient(rgb(255, 255, 255),rgb(255, 255, 255), rgb(202, 202, 202));
-    
+    background-color: white;
+   
     
     border-radius: 20px;
 
@@ -79,10 +90,10 @@ header {
 input {
 
     
-    border: 3px solid #00ff55;
-    margin: 5%;
-   width: 100vw;
-   height: 2em;
+        border: .5px solid rgb(219, 219, 219);
+
+   width: 90vw;
+   height: 2.5em;
    border-radius: 5px;
    
    /* box-shadow: 0px 2px 5px 1px #dadada; */
@@ -91,7 +102,8 @@ input {
 
 input::placeholder {
     
-    font-size: 1.2rem;
+    
+    /* font-size: 1.2rem; */
     text-align: center;
   }
 
@@ -99,19 +111,26 @@ input::placeholder {
 {
     font-size: 1.2rem;
     
-    text-align: center;
+    text-indent: 10px;
 }
 
 .Message_container {
     
-    height: 20vh;
-
+    height: 30vh;
     
-    padding-left: 20px;
+    
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     /* background-color: #00ff55;; */
-     background-image: linear-gradient(-90deg, #00ff55, yellow)
+     background-image: linear-gradient(-90deg, #fbfdfc, rgb(152, 222, 235));
+    /* background-image: linear-gradient(-90deg, #00ff55, yellow); */
+     /* background-color: rgb(12, 70, 136); */
+     /* box-shadow: 0px -9px 18px 14px rgb(236, 236, 236); */
     
+}
+
+.Message_container>h2 {
+   margin-right: 10%;
 }

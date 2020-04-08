@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from './components/Home';
+import AddListing from './components/AddListing';
 
 import './App.css';
 
@@ -15,6 +16,7 @@ function App() {
 
 
     <Home path="/"/>
+    <AddListing path="/addlisting"/>
 
 
 
