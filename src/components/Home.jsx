@@ -4,6 +4,7 @@ import "../css/home.css"
 import { IoMdAdd } from "react-icons/io";
 
 import Share from "../images/hands.png"
+import { navigate } from "@reach/router";
 
 
 
@@ -23,6 +24,11 @@ class Home extends React.Component {
         this.getData();
     }
 
+    navigateAddlisting = e => {
+        navigate(`/addlisting`);
+    
+        
+      }
     getData = event => {
         console.log("getData");
 
@@ -73,7 +79,7 @@ class Home extends React.Component {
 
             
 
-                    <div className='add_listing'>
+                    <div className='add_listing' onClick={this.navigateAddlisting}>
 
                     <img src={Share} alt=""/>
                         
