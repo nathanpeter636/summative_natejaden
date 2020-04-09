@@ -17,17 +17,26 @@ export default class AddListings extends Component {
     constructor(props) {
         super(props)
       
-        this.state = { Title: "", Category: "", Phone: "", Description: ""   };
+        this.state = { Title: "", Category: "", Food: "", Items: "", Phone: "", Description: ""   };
       }
 
-      handleCategory = event => {
+      handleCategoryFood = event => {
     
-        this.setState({ Category: event.target.value });
+        this.setState({ Category: "Food" });
        
         
         console.table(this.state.Category)
       
       }
+
+      handleCategoryItems = event => {
+
+        this.setState({ Category: "Items" });
+
+        console.table(this.state.Items)
+      }
+
+
       handleTitle = event => {
         this.setState({ Title: event.target.value });
        
@@ -99,9 +108,9 @@ render() {
             <div className='form_icons_wrapper'>
 
             <div className="food_icons_container">
-            <img src={fooddelivery} alt=""/>
+            <img onClick={this.handleCategoryFood} value={this.state.Category} src={fooddelivery} alt=""/>
             
-            <img src={household} alt=""/>
+            <img onClick={this.handleCategoryItems} value={this.state.Category} src={household} alt=""/>
             
 
            

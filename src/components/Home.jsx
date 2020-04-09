@@ -3,6 +3,8 @@ import Axios from "axios";
 import "../css/home.css"
 import { IoMdAdd } from "react-icons/io";
 
+import Share from "../images/hands.png"
+
 
 
 class Home extends React.Component {
@@ -42,11 +44,12 @@ class Home extends React.Component {
 
             <div>
 
+
              
 
                 <div className="Message_container">
 
-               <p>hello</p>
+               
 
 
                 <h2>Give and recieve <br />
@@ -68,12 +71,12 @@ class Home extends React.Component {
 
                 <div className='home_listing_wrap'>
 
-                
+            
 
                     <div className='add_listing'>
 
-                       
-                        <IoMdAdd style={{ color: "#00ff55", fontSize: "7.8em" }}/>
+                    <img src={Share} alt=""/>
+                        
                         <p>Share with others</p>
                     </div>
 
