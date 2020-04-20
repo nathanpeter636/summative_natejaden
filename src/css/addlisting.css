@@ -1,3 +1,6 @@
+
+
+
 img {
     width: 100px;
     height: auto;
@@ -18,8 +21,9 @@ img {
  
 }
 
-h1 {
+.form_wrapper h1 {
     font-size: 1.8rem;
+    font-weight: 500;
     
 }
 
@@ -34,7 +38,7 @@ form h1 {
     /* background-color: tomato; */
     width: 100vw;
     height: 130vh;
-    
+    font-family: 'Fira Sans', sans-serif;
     
 
 }
@@ -43,6 +47,7 @@ form h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-family: 'Fira Sans', sans-serif;
    
    
 }
@@ -56,7 +61,7 @@ form input {
     flex-direction: column;
     justify-content: space-evenly;
     width: 100vw;
-    
+    font-family: 'Fira Sans', sans-serif;
    
     
 }
@@ -70,7 +75,7 @@ form input {
     
     justify-content: space-evenly;
     
-    
+    font-family: 'Fira Sans', sans-serif;
 
    
 }
@@ -88,6 +93,7 @@ form input {
 
 .icon_names>p {
     margin: 5%;
+    font-family: 'Fira Sans', sans-serif;
     
 }
 
@@ -110,6 +116,7 @@ textarea {
     border: .5px solid rgb(219, 219, 219);
    border-radius: 5px;
    margin-left: 5%;
+   font-family: 'Fira Sans', sans-serif;
   }
 
   .add_image_container {
@@ -121,6 +128,7 @@ textarea {
      justify-content: center;
      align-items: center;
      height: 15em;
+     font-family: 'Fira Sans', sans-serif;
      
   }
 

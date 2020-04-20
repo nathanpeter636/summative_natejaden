@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { navigate } from "@reach/router";
+
 
 import "../css/addlisting.css";
-import { IoIosAddCircle } from "react-icons/io";
-import { IoMdArrowRoundBack } from "react-icons/io";
+
 import Axios from "axios";
 
 import "../images/food-delivery.png";
@@ -11,6 +10,7 @@ import "../images/food-delivery.png";
 import fooddelivery from "../images/shopping-bag.png";
 import household from "../images/household (1).png";
 import uploadphoto from "../images/photo.png";
+
 
 export default class AddListings extends Component {
   constructor(props) {

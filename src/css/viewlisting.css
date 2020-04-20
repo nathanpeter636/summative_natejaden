@@ -1,0 +1,91 @@
+
+
+
+
+
+.image_box {
+    width: 100vw;
+    height: 30vh;
+    background-color: red;
+   
+}
+
+
+
+.listing_wrapper {
+   display: flex;
+   flex-direction: column;
+   padding: 5%;
+   width: 90vw;
+   font-family: 'Fira Sans', sans-serif;
+   background-color: rgb(255, 255, 255);
+   
+   
+}
+
+.lisitng_title hr {
+    
+
+
+    border: 5px solid red;
+
+    
+}
+
+.action_message {
+    background-color: rgb(217, 243, 252);
+    border-radius: 10px;
+    padding: 5%;
+}
+
+.listing_wrapper h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.listing_wrapper h2 {
+    font-weight: 300;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.contact_box_container {
+
+margin-top: 10px;
+   background-color: rgb(255, 255, 255);
+   width: 100vw;
+   height: 140px;
+
+border: 1px solid rgb(216, 216, 216);
+    
+    display: flex;
+    flex-direction: row;
+    
+    
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.contact_box_container p {
+    position: absolute;
+    left: 20px;
+    bottom: 100px;
+}
+
+.contact_box_container h2 {
+    position: absolute;
+    right: 50px;
+    bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.skylight_container input {
+    width: 90%;
+}
+
+
+
+
+
+

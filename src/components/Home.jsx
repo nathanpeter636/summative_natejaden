@@ -18,8 +18,15 @@ class Home extends React.Component {
   }
 
   navigateAddlisting = (e) => {
+
+
     navigate(`/addlisting`);
+
+    
   };
+
+ 
+
   getData = (event) => {
     console.log("getData");
 
@@ -46,9 +53,34 @@ class Home extends React.Component {
           />
         </div>
 
-        <h2 style={{ color: "black", fontSize: "1rem", textAlign: "center" }}>
+        {/* <h2 style={{ color: "black", fontSize: "1rem", textAlign: "center" }}>
           123 Total Listings
-        </h2>
+        </h2> */}
+
+        <div className='category_wrappers'>
+
+          
+          <div className="food_button">
+          
+          
+       
+          </div>
+         
+
+          <div className='items_button'>
+            
+          </div>
+
+         
+        
+        </div>
+
+        <div className="Category_names">
+            <p>Food</p>
+            <p>Items</p>
+          </div>
+
+        
 
         <div className="home_listing_wrap">
           <div className="add_listing" onClick={this.navigateAddlisting}>
@@ -66,6 +98,7 @@ class Home extends React.Component {
                 phone={item.Phone}
                 description={item.Description}
                 imagePath={item.Image}
+                id={item._id}
               />
             );
           })}
@@ -76,20 +109,57 @@ class Home extends React.Component {
 }
 
 export class Showdata extends React.Component {
+
+
   constructor(props) {
-    super(props);
-
-    // console.log("hello from getData component");
-
-    // this.state = { FadeOut: false }
-    // this.state = { visible: true }
-
-    console.log(this.state);
+    super(props); 
   }
+
+
+  deleteData = event => {
+    console.log("deleteData");
+
+    // this.state = {  deleteButtonClicked: false};
+
+    Axios.delete(`http://localhost:4000/api/user-listing/${this.props.id}`).then(
+      res => {
+        console.table(res.data);
+
+        if (res.data.result === true) {
+
+          this.setState({ visible: false });
+
+         
+
+          
+          
+        }
+        
+      }
+    )
+  };
+
+
+  navigateViewlisting = (e) => {
+    navigate(`/view-listing-details/${this.props.id}`);
+
+    console.log(this.props.id);
+
+        // // Axios.put(`http://localhost:4000/api/users/${this.props.id}`)
+        // // .then( res=> {
+        // //     console.table(this.props.id)
+  
+        // // }
+  
+        // )
+  };
+
+
+
 
   render() {
     return (
-      <div className="data_container">
+      <div className="data_container" onClick={this.navigateViewlisting}>
         <img
           src={"http://localhost:4000/assets/" + this.props.imagePath}
           alt=""
