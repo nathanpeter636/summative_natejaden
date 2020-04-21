@@ -1,14 +1,18 @@
 
-
-
-
-
-.image_box {
-    width: 100vw;
-    height: 30vh;
-    background-color: red;
-   
+.listing_image {
+    min-width: 100%;
 }
+
+
+
+/* .image_box {
+    width: 100vw;
+    height: 40vh;
+    
+    overflow: hidden;
+    border-bottom: 2px solid rgb(197, 197, 197);
+    
+} */
 
 
 
@@ -19,6 +23,8 @@
    width: 90vw;
    font-family: 'Fira Sans', sans-serif;
    background-color: rgb(255, 255, 255);
+   white-space: pre-wrap;
+   text-align: left;
    
    
 }

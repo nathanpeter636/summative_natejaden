@@ -221,9 +221,13 @@ export class ShowListing extends React.Component {
 
 
 
-        <div className="image_box">
+        
 
-        </div>
+        <img className="listing_image"
+          src={"http://localhost:4000/assets/" + this.props.imagePath}
+          alt=""
+        />
+        
 
 
 
@@ -232,7 +236,7 @@ export class ShowListing extends React.Component {
 
           <div className="lisitng_title">
 
-            <h1>{this.props.title}</h1>
+            <h1 style={{marginTop: '0%'}}>{this.props.title}</h1>
             <h2>{this.props.description}</h2>
 
           </div>
@@ -252,24 +256,24 @@ export class ShowListing extends React.Component {
 
         </div>
 
-        <HorizontalLine />
+       
 
         <div className="contact_box_container">
 
-          <p>Contact</p>
+          
 
-          <MdSettingsPhone style={{ fontSize: '4rem', marginTop: '20px', color: '' }} />
+          <MdSettingsPhone style={{ fontSize: '4rem', color: '' }} />
 
           {/* <h3 style={{ fontSize: "1.5rem" }}>{this.props.phone}</h3> */}
 
 
-          <MdQuestionAnswer style={{ fontSize: '3rem' }}
+          <MdQuestionAnswer style={{ fontSize: '4rem' }}
             onClick={() => this.questionDialog.show()}
           />
 
 
 
-          <h2 >Ask a Q?</h2>
+         
 
 
 

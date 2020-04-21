@@ -25,6 +25,7 @@ class Home extends React.Component {
     
   };
 
+  
  
 
   getData = (event) => {
@@ -35,6 +36,16 @@ class Home extends React.Component {
       this.setState({ listings: res.data });
     });
   };
+
+
+
+  navigateFood = (e) => {
+    navigate(`/view-food`)
+  }
+
+  navigateItems = (e) => {
+    navigate(`/view-items`)
+  }
 
   render() {
     return (
@@ -60,14 +71,14 @@ class Home extends React.Component {
         <div className='category_wrappers'>
 
           
-          <div className="food_button">
+          <div className="food_button" onClick={this.navigateFood}>
           
           
        
           </div>
          
 
-          <div className='items_button'>
+          <div className='items_button' onClick={this.navigateItems}>
             
           </div>
 
@@ -154,20 +165,25 @@ export class Showdata extends React.Component {
         // )
   };
 
+ 
+
 
 
 
   render() {
     return (
+
+
       <div className="data_container" onClick={this.navigateViewlisting}>
+        
+        <h2>{this.props.title}</h2>
+
         <img
           src={"http://localhost:4000/assets/" + this.props.imagePath}
           alt=""
         />
-        <h2>{this.props.title}</h2>
-
-        <h2>{this.props.category}</h2>
       </div>
+      
     );
   }
 }
