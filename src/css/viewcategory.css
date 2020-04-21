@@ -6,6 +6,7 @@
 
     
     position: relative;
+    
 
 }
 
@@ -14,12 +15,19 @@
     height: auto;
     
     
+    
     position: absolute;
     left: 20px;
 }
 
+.testy {
+    margin-top: 30%;
+}
+
 
 .listing_box_wrapper {
+
+    
     display: flex;
     flex-direction: column;
    background-color: white;
@@ -28,6 +36,8 @@
 }
 
 .listing_box_container {
+
+   
 
     display: flex;
 

@@ -74,9 +74,13 @@ getFood = (event) => {
 
 </header>
 
+
+
 {this.state.food.map((food, i) => {
             return (
-              <ShowFood
+
+              
+              <ShowFood 
                 key={i}
                 title={food.Title}
                 category={food.Category}
@@ -84,8 +88,7 @@ getFood = (event) => {
                 description={food.Description}
                 imagePath={food.Image}
                 id={food._id}
-              />
-            );
+              />);
           })}
                 
             </div>
@@ -110,10 +113,15 @@ export class ShowFood extends React.Component {
 
     render() {
         return (
+
+          <React.Fragment>
+          
+          
+          
             <div className="listing_box_wrapper">
               <div className="listing_box_container" onClick={this.navigateViewlisting}>
 
-              <img className="listing_image"
+              <img className="listing_image_display"
           src={"http://localhost:4000/assets/" + this.props.imagePath}
           alt=""
         />
@@ -127,6 +135,8 @@ export class ShowFood extends React.Component {
                 </div>
                 </div>
             </div>
+
+            </React.Fragment>
         )
     }
 }

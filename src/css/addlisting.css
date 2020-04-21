@@ -9,6 +9,10 @@ img {
 
 
 .share_header {
+    
+   
+    position: fixed;
+   
  display: flex;
  justify-content: center;
  
@@ -45,6 +49,7 @@ form h1 {
 }
 
 .form_container {
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;

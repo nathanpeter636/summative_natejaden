@@ -57,6 +57,8 @@ getItems = (event) => {
 
 </header>
 
+
+
 {this.state.items.map((item, i) => {
             return (
               <ShowItem
@@ -70,7 +72,10 @@ getItems = (event) => {
               />
             );
           })}
-                
+
+
+
+        
             </div>
         )
     }
@@ -96,7 +101,7 @@ export class ShowItem extends React.Component {
             <div className="listing_box_wrapper">
               <div className="listing_box_container" onClick={this.navigateViewlisting}>
 
-              <img className="listing_image"
+              <img className="listing_image_display"
           src={"http://localhost:4000/assets/" + this.props.imagePath}
           alt=""
         />
