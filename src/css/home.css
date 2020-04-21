@@ -145,7 +145,7 @@ body {
 }
 
 .data_container img {
-   min-width: 150%;
+   min-width: 200%;
    min-height: 100%;
     opacity: 0.5;
 }
