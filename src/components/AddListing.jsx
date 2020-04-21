@@ -10,6 +10,9 @@ import "../images/food-delivery.png";
 import fooddelivery from "../images/shopping-bag.png";
 import household from "../images/household (1).png";
 import uploadphoto from "../images/photo.png";
+import BackArrow from "../images/back.png"
+
+import { navigate } from "@reach/router";
 
 
 export default class AddListings extends Component {
@@ -24,6 +27,10 @@ export default class AddListings extends Component {
     };
 
     this.formRef = React.createRef();
+  }
+
+  navigatePrev = (e) => {
+    navigate(-1)
   }
 
   handleCategoryFood = (event) => {
@@ -63,9 +70,15 @@ export default class AddListings extends Component {
       // style={{ color: "white", fontSize: "3.8em" }}
 
       <div>
-        <header className="share_header">
-          <h1>Add</h1>
-        </header>
+      <header className="share_header">
+
+<img src={BackArrow} onClick={this.navigatePrev} alt=""/>
+<div>
+<h1 className="category_header">
+<span style={{fontWeight: '500'}}>Add</span></h1>
+</div>
+
+</header>
 
         <div className="form_wrapper">
           <div className="form_container">

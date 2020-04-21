@@ -10,7 +10,7 @@ import { MdDelete } from "react-icons/md";
 import { MdQuestionAnswer } from "react-icons/md";
 import { MdSettingsPhone } from "react-icons/md";
 
-
+import BackArrow from "../images/back.png"
 
 
 
@@ -28,7 +28,9 @@ export default class ViewBook extends Component {
   }
 
 
-
+  navigatePrev = (e) => {
+    navigate(-1)
+  }
 
 
 
@@ -40,6 +42,8 @@ export default class ViewBook extends Component {
       console.log(`http://localhost:4000/api/user-listing/${this.props.id}`);
       this.setState({ listing: res.data });
     });
+
+
   }
 
 
@@ -117,19 +121,26 @@ export default class ViewBook extends Component {
 
 
 
-        <header className="share_header">
-          <h1>View</h1>
+<header className="share_header">
 
-          <MdDelete onClick={() => this.deleteDialog.show()}
+<img src={BackArrow} onClick={this.navigatePrev} alt=""/>
+<div>
+<h1 className="category_header"><span style={{fontWeight: '500', fontSize: '1rem'}}></span> 
+<span style={{fontWeight: '500'}}>View</span></h1>
+</div>
+
+</header>
+
+          {/* <MdDelete onClick={() => this.deleteDialog.show()}
 
 
             style={{ color: "rgb(232, 61, 23)", fontSize: "1.8em" }}
-          />
+          /> */}
 
 
 
 
-        </header>
+      
 
         <SkyLight dialogStyles={appModal} hideOnOverlayClicked ref={ref => this.deleteDialog = ref} title="Are you sure you want to Delete?">
 
@@ -180,20 +191,20 @@ export class ShowListing extends React.Component {
 
 
 
-    const HorizontalLine = ({ color }) => (
-      <hr
-        style={{
+    // const HorizontalLine = ({ color }) => (
+    //   <hr
+    //     style={{
 
-          position: 'absolute',
-          bottom: '150px',
-          zIndex: '10',
-          opacity: '0.5',
-          backgroundColor: color,
+    //       position: 'absolute',
+    //       bottom: '150px',
+    //       zIndex: '10',
+    //       opacity: '0.5',
+    //       backgroundColor: color,
 
-          width: '100vw',
-        }}
-      />
-    );
+    //       width: '100vw',
+    //     }}
+    //   />
+    // );
 
     return (
 
