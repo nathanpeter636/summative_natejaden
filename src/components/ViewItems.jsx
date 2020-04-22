@@ -47,7 +47,7 @@ getItems = (event) => {
         return (
             <div>
 
-<header className="share_header">
+<header className="share_header remove_fixed">
 
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
 <div>

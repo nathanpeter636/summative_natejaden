@@ -10,6 +10,11 @@
 
 }
 
+.remove_fixed {
+    position: unset;
+}
+
+
 .share_header img {
     width: 20px;
     height: auto;
@@ -20,14 +25,13 @@
     left: 20px;
 }
 
-.testy {
-    margin-top: 30%;
+.outer_wrapper {
+    padding-top: 30%;
 }
-
 
 .listing_box_wrapper {
 
-    
+   
     display: flex;
     flex-direction: column;
    background-color: white;

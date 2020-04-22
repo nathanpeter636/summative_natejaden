@@ -64,7 +64,7 @@ getFood = (event) => {
         return (
             <div>
 
-<header className="share_header">
+<header className="share_header remove_fixed">
 
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
 <div>
@@ -135,6 +135,8 @@ export class ShowFood extends React.Component {
                 </div>
                 </div>
             </div>
+
+            
 
             </React.Fragment>
         )
