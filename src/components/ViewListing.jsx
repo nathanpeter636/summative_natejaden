@@ -143,17 +143,19 @@ export default class ViewBook extends Component {
               <span style={{ fontWeight: '500' }}>View</span></h1>
           </div>
 
+
+<div className="tertiary_actions">
           <MdDelete onClick={() => this.deleteDialog.show()}
          
 
 
-            style={{ color: "rgb(232, 61, 23)", fontSize: "1.8em" }}
+            style={{ color: "black", fontSize: "1.8em" }}
           />
 
           
-          <MdEdit  onClick={this.navigateEditListing} style={{ color: "rgb(232, 61, 23)", fontSize: "1.8em" }}/>
+          <MdEdit  onClick={this.navigateEditListing} style={{ color: "black", fontSize: "1.8em" }}/>
 
-
+          </div>
         </header>
 
 

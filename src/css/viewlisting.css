@@ -1,9 +1,19 @@
 
+
+.tertiary_actions {
+    position: absolute;
+  right: 30px;
+  
+}
+
 .listing_image {
-    
+
     min-width: 100%;
     margin-top: 60px;
 }
+
+
+
 
 
 
