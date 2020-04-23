@@ -4,7 +4,7 @@ import { navigate } from "@reach/router";
 
 
 import BackArrow from "../images/back.png"
-
+import Apple from "../images/apple.png";
 
 import { MdArrowBack } from "react-icons/md";
 
@@ -68,8 +68,8 @@ getFood = (event) => {
 
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
 <div>
-<h1 className="category_header"><span style={{fontWeight: '500', fontSize: '1rem', marginLeft: '-50px'}}>Browse  >  </span> 
-<span style={{fontWeight: '500'}}>Food</span></h1>
+<h1 className="category_header">
+<span>Food</span></h1>
 </div>
 
 </header>

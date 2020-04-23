@@ -1,6 +1,6 @@
 
 body {
-    background-color: rgb(241, 241, 241);
+    background-color: rgb(251, 251, 251);
 }
 
 /* header {
@@ -21,7 +21,9 @@ body {
     
 } */
 
-.add_listing {
+
+
+/* .add_listing {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -29,13 +31,42 @@ body {
     border: #00ff55;
     
     width: 40vw;    
-    height: 70vw;
+    height: 40vw;
     border-radius: 20px;
     background-color: rgb(238, 252, 255) ;
 
-    border: 1px solid #00ff55;
+    border: 3px solid #37b34a;
     
+} */
+
+.Message_container {
+    
+    height: 16vh;
+    /* margin-top: 1vh;
+     */
+    font-family: 'Fira Sans', sans-serif;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: #00ff55;; */
+     /* background-image: linear-gradient(-90deg, #fbfdfc, rgb(152, 222, 235)); */
+    /* background-image: linear-gradient(-90deg, #00ff55, yellow); */
+     /* background-color: rgb(12, 70, 136); */
+     /* box-shadow: 0px -9px 18px 14px rgb(236, 236, 236); */
+   
+    font-size: 1rem;
 }
+
+
+
+.Trovelogo {
+    height: auto;
+    width: 50vw;
+    margin-bottom: 1rem;;
+}
+
 
 .category_wrappers {
     width: 100vw;
@@ -44,7 +75,7 @@ body {
  
     justify-content: space-evenly;
     align-items: center;
-    height: 15vh;
+    margin-bottom: 2vh;
 
 }
 
@@ -56,39 +87,35 @@ body {
     
    
    
-    margin-left: 8%;
-    margin-right: 8%;
-    margin-top: -5%;
+    margin-left: 1.8rem;
+    margin-right: 2.5rem;
+    margin-top: -8.5%;
+    color: #0c9a46;
+    font-weight: 500;
+    font-size: 0.9rem;
     
    
     
 }
 
-
-
-.food_button {
-
-    width: 90px;
-    height: 90px;
+.Share {
+    width: 2rem;
+    height: 2rem;
+    padding: .5rem;
+    border-radius: 33px;
+    border: solid 3.5px #37b34a;
     
-    border-radius: 50px;
-    background: url(../images/shopping-bag.png) no-repeat left top;
-    background-size: cover;
-    background-color:  rgb(152, 222, 235);
-
-  
 }
-.items_button {
-    width: 90px;
-    height: 90px;
-    
-    border-radius: 50px;
-    background: url(../images/household\ \(1\).png) no-repeat left top;
-    background-size: cover;
-    background-color:  rgb(152, 222, 235);
 
+.Apple {
+    width: 3rem;
+    height: 3rem;
 }
  
+.Items {
+    width: 3rem;
+    height: 3rem;
+}
 
 
 
@@ -103,7 +130,7 @@ body {
    
     height: 100vh;
     width: 100vw;
-   background-color: rgb(255, 255, 255);
+   /* background-color: rgb(255, 255, 255); */
    height: auto;
    padding-top: 5%;
    border-top: 1px solid rgb(212, 212, 212);
@@ -128,14 +155,16 @@ body {
     
     box-shadow: 0px 2px 5px 1px #cccccc;
    
-   margin-bottom: 15%;
+   margin-bottom: 5%;
     width: 40vw;    
-    height: 70vw;
+    height: 40vw;
     box-shadow: black;
-    background-color: white;
+    /* background-color: white; */
+    background-color: rgb(0, 0, 0);
+    border: solid 3.5px #cacaca;
    
     
-    border-radius: 20px;
+    border-radius: 10px;
 
     font-family: 'Fira Sans', sans-serif;
 
@@ -145,33 +174,39 @@ body {
 }
 
 .data_container img {
-   min-width: 200%;
-   min-height: 100%;
-    opacity: 0.5;
-}
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 1;
+
+ }
 
 .data_container h2 {
-    margin-top: 60%;
+    width: 100%;
+    padding: 0.3rem;
+    background-color: rgba(0, 0, 0, 0.568);
+    margin-top: 70%;
     z-index: 10;
     position: absolute;
     z-index: 999;
     text-align: left;
-    bottom: 5%;
-    left: 5%;
-    color: rgb(0, 0, 0);
+    bottom: -1rem;
+    left: 0rem;
+    color: rgb(241, 241, 241);
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
     
 }
-
 
 
 input {
 
     font-family: 'Fira Sans', sans-serif;
-        border: .5px solid rgb(219, 219, 219);
+    /* border: 2px solid #37b34a; */
+    border: 3.5px solid #37b34a;
 
-   width: 90vw;
-   height: 2.5em;
-   border-radius: 5px;
+   width: 80vw;
+   height: 1.5rem;
+   border-radius: 30px;
    
    /* box-shadow: 0px 2px 5px 1px #dadada; */
 
@@ -182,42 +217,24 @@ input::placeholder {
     
     /* font-size: 1.2rem; */
     text-align: center;
+    color: #b3b3b3;
   }
 
   input[type="text"]
 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     
-    text-indent: 10px;
+    text-indent: 20px;
 }
 
-.Message_container {
 
-    
-    
-    height: 30vh;
-    
-    font-family: 'Fira Sans', sans-serif;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    /* background-color: #00ff55;; */
-     background-image: linear-gradient(-90deg, #fbfdfc, rgb(152, 222, 235));
-    /* background-image: linear-gradient(-90deg, #00ff55, yellow); */
-     /* background-color: rgb(12, 70, 136); */
-     /* box-shadow: 0px -9px 18px 14px rgb(236, 236, 236); */
-    font-size: 1rem;
-}
-
-.Message_container>h2 {
+/* .Message_container>h2 {
    margin-right: 10%;
    font-weight: 500;
    font-family: 'Fira Sans', sans-serif;
     font-size: 1.5rem;
-    margin-top: 20%;
-}
+    margin-top: 2rem;
+} */
 
 .fadeOut{
     opacity:0;

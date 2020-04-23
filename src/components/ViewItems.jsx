@@ -51,8 +51,8 @@ getItems = (event) => {
 
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
 <div>
-<h1 className="category_header"><span style={{fontWeight: '500', fontSize: '1rem', marginLeft: '-50px'}}>Browse  >  </span> 
-<span style={{fontWeight: '500'}}>Items</span></h1>
+<h1 className="category_header">
+<span>Items</span></h1>
 </div>
 
 </header>

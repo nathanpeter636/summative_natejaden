@@ -9,19 +9,14 @@ img {
 
 
 .share_header {
-    
-   
-    position: fixed;
-    top: 0;
-    
-   
  display: flex;
  justify-content: center;
  
  align-items: center;
  flex-direction: row;
 
- background-image: linear-gradient(-90deg, #fbfdfc, rgb(152, 222, 235));
+ background-color: rgb(241, 241, 241);
+ /* background: linear-gradient(0deg, rgba(55,179,74,1) 0%, rgba(12,154,70,1) 24%, rgba(0,147,69,1) 43%, rgba(0,104,56,1) 77%); */
  width: 100vw;
  height: 60px;
  /* box-shadow: 0px -9px 18px 14px rgb(240, 240, 240); */
@@ -29,7 +24,7 @@ img {
 }
 
 .form_wrapper h1 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 500;
     
 }
@@ -46,22 +41,24 @@ form h1 {
     width: 100vw;
     height: 130vh;
     font-family: 'Fira Sans', sans-serif;
+    background-color: white;
     
 
 }
 
 .form_container {
-    margin-top: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-family: 'Fira Sans', sans-serif;
+    
    
    
 }
 
 form input {
     margin-left: 5%;
+
 }
 .form_icons_wrapper {
     text-align: center;
@@ -79,11 +76,21 @@ form input {
     display: flex;
     flex-direction: row;
     width: 100vw;
+   
     
     
     justify-content: space-evenly;
     
     font-family: 'Fira Sans', sans-serif;
+    
+
+   
+}
+
+.food_icons_container img {
+   
+    width:auto;
+    height: 4.5rem;
 
    
 }
@@ -97,18 +104,25 @@ form input {
    width: 100vw;
    /* background-color: rgb(255, 238, 0); */
    width: 100vw;
+
+   color: #0c9a46;
+   font-weight: 500;
+   font-size: 1.4rem;
+   margin-top: -1rem;;
+   margin-bottom: 1rem;
 }
 
 .icon_names>p {
     margin: 5%;
     font-family: 'Fira Sans', sans-serif;
+    background-color: white;
     
 }
 
 .input_wrapper {
-    padding-top: 3%;
+    margin-top: -1rem;
     background-color: white;
-    box-shadow: 0px -9px 18px 0px rgb(224, 224, 224);
+    box-shadow: 0px -9px 18px 0px rgb(255, 255, 255);
     padding-bottom: 8%;
     
 }
@@ -125,6 +139,7 @@ textarea {
    border-radius: 5px;
    margin-left: 5%;
    font-family: 'Fira Sans', sans-serif;
+   width:87vw;;
    
   }
 
@@ -136,10 +151,21 @@ textarea {
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     height: 15em;
+     margin-top: 1rem;
+     height: 14rem;
      font-family: 'Fira Sans', sans-serif;
      
   }
+
+  .add_image_container img{
+
+    
+     
+padding-top: 0.5rem;
+padding-left: 0.5rem;
+padding-bottom: 1rem;;
+    
+ }
 
   .button_wrapper {
       
@@ -151,13 +177,16 @@ textarea {
   .add_button {
       
       
-
-      border-radius: 5px;
-      width: 300px;
+    margin-top: -1rem;
+      border-radius: 15px;
+      width: 250px;
       height: 60px;
       
       font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
       color: white;
-      background-color: rgb(97, 212, 233);
+      background: rgb(55,179,74);
+      background: linear-gradient(0deg, rgba(55,179,74,1) 0%, rgba(12,154,70,1) 24%, rgba(0,147,69,1) 43%);
       
   }
