@@ -126,7 +126,7 @@ export default class ViewBook extends Component {
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
 <div>
 <h1 className="category_header"><span style={{fontWeight: '500', fontSize: '1rem'}}></span> 
-<span style={{fontWeight: '500'}}>View</span></h1>
+<span>View</span></h1>
 </div>
 
 </header>

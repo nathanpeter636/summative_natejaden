@@ -51,8 +51,8 @@ getItems = (event) => {
 
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
 <div>
-<h1 className="category_header"><span style={{fontWeight: '500', fontSize: '1rem', marginLeft: '-50px'}}>Browse  >  </span> 
-<span style={{fontWeight: '500'}}>Items</span></h1>
+<h1 className="category_header">
+<span>Items</span></h1>
 </div>
 
 </header>
@@ -105,7 +105,7 @@ export class ShowItem extends React.Component {
         <div className="listing_details_container">
 
                 <h2>{this.props.title}</h2>
-                <h3>{this.props.phone}</h3>
+                <h3>Contact: {this.props.phone}</h3>
 
                 </div>
                 </div>

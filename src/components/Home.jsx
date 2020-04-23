@@ -3,7 +3,10 @@ import Axios from "axios";
 import "../css/home.css";
 import { IoMdAdd } from "react-icons/io";
 
-import Share from "../images/hands.png";
+import Share from "../images/add.png";
+import Apple from "../images/apple.png";
+import Items from "../images/items.png";
+import Trovelogo from "../images/trove.png";
 import { navigate } from "@reach/router";
 
 class Home extends React.Component {
@@ -49,16 +52,14 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
+      <div div className="Master_container">
         <div className="Message_container">
-          <h2>
-            Give and recieve <br />
-            multiple items throughtout <br />
-            NZ for those in need.
-          </h2>
+          
+          <img className="Trovelogo" src={Trovelogo} alt="" />
+          
 
           <input
-            placeholder="Type Something..."
+            placeholder="Search with Trove . . ."
             className="autocomplete"
             type="text"
           />
@@ -70,17 +71,21 @@ class Home extends React.Component {
 
         <div className='category_wrappers'>
 
-          
-          <div className="food_button" onClick={this.navigateFood}>
-          
+        <div className="food_button" onClick={this.navigateFood}>
+            <img className="Apple" src={Apple} alt="" />
           
        
+          </div>
+
+        <div className="add_listing" onClick={this.navigateAddlisting}>
+            <img className="Share" src={Share} alt="" />
           </div>
          
 
           <div className='items_button' onClick={this.navigateItems}>
+            <img className="Items" src={Items} alt="" />
             
-          </div>
+          </div> 
 
          
         
@@ -88,17 +93,13 @@ class Home extends React.Component {
 
         <div className="Category_names">
             <p>Food</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Upload</p>
             <p>Items</p>
           </div>
 
         
 
         <div className="home_listing_wrap">
-          <div className="add_listing" onClick={this.navigateAddlisting}>
-            <img src={Share} alt="" />
-
-            <p>Share with others</p>
-          </div>
 
           {this.state.listings.map((item, i) => {
             return (

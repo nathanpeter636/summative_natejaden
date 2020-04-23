@@ -7,9 +7,9 @@ import Axios from "axios";
 
 import "../images/food-delivery.png";
 
-import fooddelivery from "../images/shopping-bag.png";
-import household from "../images/household (1).png";
-import uploadphoto from "../images/photo.png";
+import Appleadd from "../images/appleadd.png";
+import Itemadd from "../images/itemadd.png";
+import uploadphoto from "../images/uploadimg.png";
 import BackArrow from "../images/back.png"
 
 import { navigate } from "@reach/router";
@@ -75,7 +75,7 @@ export default class AddListings extends Component {
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
 <div>
 <h1 className="category_header">
-<span style={{fontWeight: '500'}}>Add</span></h1>
+<span>Add</span></h1>
 </div>
 
 </header>
@@ -85,7 +85,7 @@ export default class AddListings extends Component {
             <form onSubmit={this.handleSubmit} ref={this.formRef}>
               <h1>
                 {" "}
-                What would you like <br /> to Give?
+                What would you like <br /> to give?
               </h1>
 
               <div className="form_icons_wrapper">
@@ -93,26 +93,26 @@ export default class AddListings extends Component {
                   <img
                     onClick={this.handleCategoryFood}
                     value={this.state.Category}
-                    src={fooddelivery}
+                    src={Appleadd}
                     alt=""
                   />
 
                   <img
                     onClick={this.handleCategoryItems}
                     value={this.state.Category}
-                    src={household}
+                    src={Itemadd}
                     alt=""
                   />
                 </div>
 
                 <div className="icon_names">
-                  <p>Food</p>
-                  <p>Items</p>
+                  <p>&nbsp;&nbsp;Food</p>
+                  <p>Items&nbsp;&nbsp;&nbsp;</p>
                 </div>
               </div>
 
               <div className="input_wrapper">
-                <h1 style={{ color: "gray" }}>What is it? (Title)</h1>
+                <h1 style={{ color: "gray" }}>Food or item name</h1>
 
                 <input
                   style={{ color: "gray" }}
@@ -121,7 +121,7 @@ export default class AddListings extends Component {
                   required
                 />
 
-                <h1 style={{ color: "gray" }}>Give it a Description</h1>
+                <h1 style={{ color: "gray" }}>Please enter a description</h1>
 
                 <textarea
                   style={{ color: "gray" }}
@@ -130,7 +130,7 @@ export default class AddListings extends Component {
                   name="Description"
                 ></textarea>
 
-                <h1 style={{ color: "gray" }}>Mobile no.</h1>
+                <h1 style={{ color: "gray" }}>Contact details</h1>
 
                 <input
                   style={{ color: "gray" }}
