@@ -20,11 +20,14 @@ export default class AddListings extends Component {
     super(props);
 
     this.state = {
+      
       Category: "",
       Food: "",
       Items: "",
       filename: "no file chosen",
     };
+
+    console.log(this.state.question_id)
 
     this.formRef = React.createRef();
   }
@@ -38,6 +41,8 @@ export default class AddListings extends Component {
     console.table(this.state.Category);
   };
 
+
+
   handleCategoryItems = (event) => {
     this.setState({ Category: "Items" });
     console.table(this.state.Items);
@@ -46,11 +51,17 @@ export default class AddListings extends Component {
   onFileUpdate = (e) => {
     console.log(e.target.files[0].name);
     this.setState({ filename: e.target.files[0].name });
+    // this.setState({id: Date.now()})
+
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
 
+    this.setState({id: Date.now()})
+
+    
+   
     var formData = new FormData(this.formRef.current);
     formData.append("Category", this.state.Category);
 
@@ -63,7 +74,11 @@ export default class AddListings extends Component {
       formData,
       settings
     ).then((res) => {});
+
+    
   };
+
+
 
   render() {
     return (
@@ -167,6 +182,8 @@ export default class AddListings extends Component {
                   onChange={this.onFileUpdate}
                 ></input>
               </div>
+
+              <input type="hidden" name="id" value={Date.now()} />
 
               <div className="button_wrapper">
                 <button type="submit" className="add_button">

@@ -110,6 +110,7 @@ class Home extends React.Component {
                 description={item.Description}
                 imagePath={item.Image}
                 id={item._id}
+               
               />
             );
           })}

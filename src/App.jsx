@@ -4,6 +4,7 @@ import AddListing from "./components/AddListing";
 import ViewListing from "./components/ViewListing";
 import ViewFood from "./components/ViewFood";
 import ViewItems from "./components/ViewItems";
+import EditListing from "./components/EditListing";
 
 import "./App.css";
 
@@ -21,6 +22,7 @@ function App() {
         <ViewListing path="/view-listing-details/:id"/>
         <ViewFood path="/view-food/"/>
         <ViewItems path="/view-items"/>
+        <EditListing path="/edit-listing/:id"/>
 
       </Router>
     </div>
