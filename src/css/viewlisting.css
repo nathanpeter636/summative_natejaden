@@ -1,4 +1,6 @@
-
+html{
+    background-color: white;
+}
 .listing_image {
     min-width: 100%;
 }
@@ -55,7 +57,8 @@
     font-weight: 500;
     color: rgb(129, 129, 129);
     font-family: 'Fira Sans', sans-serif;
-    font-size: 1.3rem;;
+    font-size: 1.3rem;
+    min-height: 10rem;
 }
 
 .contact_box_container {
@@ -63,9 +66,7 @@
 
    background-color: rgb(255, 255, 255);
    width: 100vw;
-   height: 100px;
-
-border: 1px solid rgb(216, 216, 216);
+   height: 4rem;
     
     display: flex;
     flex-direction: row;
@@ -73,6 +74,8 @@ border: 1px solid rgb(216, 216, 216);
     
     align-items: center;
     justify-content: space-around;
+
+    margin-bottom: 6.25rem;
     
 }
 

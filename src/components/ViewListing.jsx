@@ -5,6 +5,8 @@ import SkyLight from 'react-skylight';
 import { navigate } from "@reach/router";
 import Axios from "axios";
 import "../css/viewlisting.css"
+import "../css/footer.css";
+
 
 import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
@@ -12,6 +14,10 @@ import { MdQuestionAnswer } from "react-icons/md";
 import { MdSettingsPhone } from "react-icons/md";
 
 import BackArrow from "../images/back.png"
+import Apple from "../images/apple.png";
+import Share from "../images/add.png";
+import Items from "../images/items.png";
+
 
 
 
@@ -123,22 +129,55 @@ export default class ViewBook extends Component {
 
 
 <header className="share_header">
+  <div className="share_header_wrapper">
 
           <img src={BackArrow} onClick={this.navigatePrev} alt="" />
-          <div>
-            <h1 className="category_header"><span style={{ fontWeight: '500', fontSize: '1rem' }}></span>
-              <span>View</span></h1>
-          </div>
-
-          <MdDelete onClick={() => this.deleteDialog.show()}
-          style={{ color: "#37b34a", fontSize: "1.8em" }}/>
-
-          
+          {/* <div>
+            <h1 className="category_header">
+              <span></span></h1>
+          </div> */}
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <MdEdit  onClick={this.navigateEditListing} 
-          style={{ color: "#37b34a", fontSize: "1.8em" }}/>
+          style={{ color: "#37b34a", fontSize: "2.25rem" }}/>
+          &nbsp;&nbsp;&nbsp;
+          <MdDelete onClick={() => this.deleteDialog.show()}
+          style={{ color: "#37b34a", fontSize: "2.25rem" }}/>
+  </div>
 
 
         </header>
+
+
+        <div className='footer'>
+
+          <div className="footer_wrapper">
+
+            <div className="Category_names">
+              <div className="food_button" onClick={this.navigateFood}>
+                <img className="Apple" src={Apple} alt="" />
+                <p>Food</p>
+              </div>
+
+            </div>
+
+            <div className="Category_names">
+              <div className="add_listing" onClick={this.navigateAddlisting}>
+                <img className="Share" src={Share} alt="" />
+                <p>&nbsp;Upload</p>
+              </div>
+
+            </div>
+
+            <div className="Category_names">
+              <div className='items_button' onClick={this.navigateItems}>
+                <img className="Items" src={Items} alt="" />
+                <p>Items</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
 
 
 
@@ -281,12 +320,12 @@ export class ShowListing extends React.Component {
 
           
 
-          <MdSettingsPhone style={{ fontSize: '4rem', color: '' }} />
+          <MdSettingsPhone style={{ fontSize: '3rem', color: '' }} />
 
           {/* <h3 style={{ fontSize: "1.5rem" }}>{this.props.phone}</h3> */}
 
 
-          <MdQuestionAnswer style={{ fontSize: '4rem' }}
+          <MdQuestionAnswer style={{ fontSize: '3rem' }}
             onClick={() => this.questionDialog.show()}
           />
 

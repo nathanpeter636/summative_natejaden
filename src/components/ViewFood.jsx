@@ -68,16 +68,20 @@ getFood = (event) => {
             <div>
 
 <header className="share_header remove_fixed">
+<div className="share_header_wrapper">
 
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
 <div>
 <h1 className="category_header">
-<span>Food</span></h1>
+<span>Search Food</span></h1>
 </div>
 
+</div>
 </header>
 
-<div className='category_wrappers'>
+<div className='footer'>
+
+  <div className="footer_wrapper">
 
 <div className="Category_names">
   <div className="food_button" onClick={this.navigateFood}>
@@ -102,9 +106,11 @@ getFood = (event) => {
     </div>
   </div>
 
-
+  </div>
 
 </div>
+
+<div className="page_margin"></div>
 
 {this.state.food.map((food, i) => {
             return (

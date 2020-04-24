@@ -70,40 +70,36 @@ class Home extends React.Component {
           123 Total Listings
         </h2> */}
 
-        <div className='category_wrappers'>
+        <div className='footer'>
 
-        <div className="Category_names">
-          <div className="food_button" onClick={this.navigateFood}>
-            <img className="Apple" src={Apple} alt="" />
-            <p>Food</p>
-        </div>
+          <div className="footer_wrapper">
 
-          </div>
+            <div className="Category_names">
+              <div className="food_button" onClick={this.navigateFood}>
+                <img className="Apple" src={Apple} alt="" />
+                <p>Food</p>
+              </div>
 
-        <div className="Category_names">
-          <div className="add_listing" onClick={this.navigateAddlisting}>
-            <img className="Share" src={Share} alt="" />
-            <p>&nbsp;Upload</p>
-        </div>
-
-        </div>
-
-        <div className="Category_names">
-          <div className='items_button' onClick={this.navigateItems}>
-            <img className="Items" src={Items} alt="" />
-            <p>Items</p>
             </div>
+
+            <div className="Category_names">
+              <div className="add_listing" onClick={this.navigateAddlisting}>
+                <img className="Share" src={Share} alt="" />
+                <p>&nbsp;Upload</p>
+              </div>
+
+            </div>
+
+            <div className="Category_names">
+              <div className='items_button' onClick={this.navigateItems}>
+                <img className="Items" src={Items} alt="" />
+                <p>Items</p>
+              </div>
+            </div>
+
           </div>
 
-
-
         </div>
-
-        {/* <div className="Category_names">
-            <p>Food</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Upload</p>
-            <p>Items</p>
-        </div> */}
 
         
 
