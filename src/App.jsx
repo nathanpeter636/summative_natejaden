@@ -25,6 +25,10 @@ function App() {
         <EditListing path="/edit-listing/:id"/>
 
       </Router>
+
+
+
+      <footer>Hello</footer>
     </div>
   );
 }

@@ -9,6 +9,9 @@ import "../css/viewlisting.css"
 import { MdDelete } from "react-icons/md";
 import { MdQuestionAnswer } from "react-icons/md";
 import { MdSettingsPhone } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
+
+
 
 import BackArrow from "../images/back.png"
 
@@ -129,13 +132,19 @@ export default class ViewBook extends Component {
 <span>View</span></h1>
 </div>
 
+<MdDelete onClick={() => this.deleteDialog.show()}
+style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em" }}
+/>
+
+<MdEdit onClick={() => this.deleteDialog.show()}
+style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em" }}
+/>
+
+
+
 </header>
 
-          {/* <MdDelete onClick={() => this.deleteDialog.show()}
-
-
-            style={{ color: "rgb(232, 61, 23)", fontSize: "1.8em" }}
-          /> */}
+          
 
 
 
