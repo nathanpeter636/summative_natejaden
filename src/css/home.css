@@ -1,6 +1,13 @@
 
 body {
-    background-color: rgb(251, 251, 251);
+    /* background-color: rgb(251, 251, 251); */
+    background: rgb(205,205,205);
+    background: linear-gradient(0deg, rgba(205,205,205,1) 0%, 
+    rgba(244,244,244,1) 20%, rgba(255,255,255,1) 50%, 
+    rgba(240,240,240,1) 80%, rgba(231,231,231,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
 }
 
 /* header {
@@ -41,7 +48,8 @@ body {
 
 .Message_container {
     
-    height: 16vh;
+    height: 13vh;
+    width: 100vw;
     /* margin-top: 1vh;
      */
     font-family: 'Fira Sans', sans-serif;
@@ -57,64 +65,24 @@ body {
      /* box-shadow: 0px -9px 18px 14px rgb(236, 236, 236); */
    
     font-size: 1rem;
+    background-color: rgb(253, 253, 253);
+
+    z-index: 1000;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    -webkit-box-shadow: -1px -21px 26px 24px rgba(0,0,0,0.51);
+    -moz-box-shadow: -1px -21px 26px 24px rgba(0,0,0,0.51);
+    box-shadow: -1px -21px 26px 24px rgba(0,0,0,0.51);
 }
 
 
 
 .Trovelogo {
     height: auto;
-    width: 50vw;
-    margin-bottom: 1rem;;
-}
-
-
-.category_wrappers {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
- 
-    justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 2vh;
-
-}
-
-.Category_names {
-    
-    
-    display: flex;
-    justify-content: space-around;
-    
-   
-   
-    margin-left: 1.8rem;
-    margin-right: 2.5rem;
-    margin-top: -8.5%;
-    color: #0c9a46;
-    font-weight: 500;
-    font-size: 0.9rem;
-    
-   
-    
-}
-
-.Share {
-    width: 2rem;
-    height: 2rem;
-    padding: .5rem;
-    border-radius: 33px;
-    border: solid 3.5px #37b34a;
-    
-}
-
-.Apple {
-    width: 3rem;
-    height: 3rem;
-}
- 
-.Items {
-    width: 3rem;
-    height: 3rem;
+    width: 45vw;
+    margin-bottom: 0.75rem;;
 }
 
 
@@ -127,13 +95,15 @@ body {
     flex-wrap: wrap;
 
     justify-content: space-evenly;
-   
+
+
+   padding-bottom: 5rem;
+   padding-top: 7.5rem;
     height: 100vh;
     width: 100vw;
    /* background-color: rgb(255, 255, 255); */
    height: auto;
-   padding-top: 5%;
-   border-top: 1px solid rgb(212, 212, 212);
+   background-color: rgba(245, 245, 245, 0);
 }
 
 
@@ -156,8 +126,8 @@ body {
     box-shadow: 0px 2px 5px 1px #cccccc;
    
    margin-bottom: 5%;
-    width: 40vw;    
-    height: 40vw;
+    width: 42vw;    
+    height: 42vw;
     box-shadow: black;
     /* background-color: white; */
     background-color: rgb(0, 0, 0);
@@ -205,7 +175,7 @@ input {
     border: 3.5px solid #37b34a;
 
    width: 80vw;
-   height: 1.5rem;
+   height: 1.3rem;
    border-radius: 30px;
    
    /* box-shadow: 0px 2px 5px 1px #dadada; */
