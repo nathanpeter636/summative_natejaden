@@ -2,14 +2,14 @@ import React, { Component } from "react";
 
 
 import "../css/addlisting.css";
-
+import "../css/viewlisting.css"
 import Axios from "axios";
 
 import "../images/food-delivery.png";
 
-import fooddelivery from "../images/shopping-bag.png";
-import household from "../images/household (1).png";
-import uploadphoto from "../images/photo.png";
+import Appleadd from "../images/appleadd.png";
+import Itemadd from "../images/itemadd.png";
+import uploadphoto from "../images/uploadimg.png";
 import BackArrow from "../images/back.png"
 
 import { navigate } from "@reach/router";
@@ -142,37 +142,41 @@ export default class AddListings extends Component {
 
 
 
-      <header className="share_header">
+<header className="share_header">
+<div className="share_header_wrapper">
 
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
 <div>
 <h1 className="category_header">
-<span style={{fontWeight: '500'}}>Edit listing</span></h1>
+<span>Edit Item</span></h1>
 </div>
 
+</div>
 </header>
 
         <div className="form_wrapper">
           <div className="form_container">
             <form onSubmit={this.editListing} ref={this.editRef}>
+            <div className="share_page_margin">
               <h1>
                 {" "}
                 Food or Item?
               </h1>
+            </div>
 
               <div className="form_icons_wrapper">
                 <div className="food_icons_container">
                   <img
                     
                     value=''
-                    src={fooddelivery}
+                    src={Appleadd}
                     alt=""
                   />
 
                   <img
                     
                     value=''
-                    src={household}
+                    src={Itemadd}
                     alt=""
                   />
                 </div>

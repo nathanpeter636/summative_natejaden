@@ -38,7 +38,23 @@ export default class ViewBook extends Component {
   navigatePrev = (e) => {
     navigate(-1)
   }
+  
 
+  navigateFood = (e) => {
+    navigate(`/view-food`)
+  }
+
+  navigateItems = (e) => {
+    navigate(`/view-items`)
+  }
+
+  navigateAddlisting = (e) => {
+
+
+    navigate(`/addlisting`);
+
+    
+  };
 
 
   componentDidMount() {
@@ -87,6 +103,14 @@ export default class ViewBook extends Component {
 
 
 
+    navigateEditListing = e => {
+
+      navigate(`/edit-listing/${this.props.id}`)
+
+      console.log(this.props.id)
+
+    }
+
 
 
 
@@ -128,6 +152,7 @@ export default class ViewBook extends Component {
 
 
 
+
 <header className="share_header">
   <div className="share_header_wrapper">
 
@@ -141,7 +166,7 @@ export default class ViewBook extends Component {
           style={{ color: "#37b34a", fontSize: "2.25rem" }}/>
           &nbsp;&nbsp;&nbsp;
           <MdDelete onClick={() => this.deleteDialog.show()}
-          style={{ color: "#37b34a", fontSize: "2.25rem" }}/>
+          style={{ color: "#37b34a", fontSize: "2.5rem" }}/>
   </div>
 
 

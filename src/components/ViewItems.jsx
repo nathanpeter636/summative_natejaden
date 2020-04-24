@@ -37,6 +37,7 @@ getItems = (event) => {
   
   };
 
+
   componentDidMount() {
       this.getItems()
   }
@@ -47,6 +48,21 @@ getItems = (event) => {
     navigate(-1)
   }
 
+  navigateFood = (e) => {
+    navigate(`/view-food`)
+  }
+
+  navigateItems = (e) => {
+    navigate(`/view-items`)
+  }
+
+  navigateAddlisting = (e) => {
+
+
+    navigate(`/addlisting`);
+
+    
+  };
 
     render() {
         return (

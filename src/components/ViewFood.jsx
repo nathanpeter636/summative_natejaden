@@ -43,6 +43,15 @@ getFood = (event) => {
   
   };
 
+  navigateFood = (e) => {
+    navigate(`/view-food`)
+  }
+
+  navigateItems = (e) => {
+    navigate(`/view-items`)
+  }
+
+
   componentDidMount() {
       this.getFood()
   }
@@ -60,6 +69,7 @@ getFood = (event) => {
 
     
   };
+  
 
 
 
