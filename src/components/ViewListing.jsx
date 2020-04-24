@@ -7,6 +7,7 @@ import Axios from "axios";
 import "../css/viewlisting.css"
 
 import { MdDelete } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
 import { MdQuestionAnswer } from "react-icons/md";
 import { MdSettingsPhone } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
@@ -126,12 +127,21 @@ export default class ViewBook extends Component {
 
 <header className="share_header">
 
-<img src={BackArrow} onClick={this.navigatePrev} alt=""/>
-<div>
-<h1 className="category_header"><span style={{fontWeight: '500', fontSize: '1rem'}}></span> 
-<span>View</span></h1>
-</div>
+          <img src={BackArrow} onClick={this.navigatePrev} alt="" />
+          <div>
+            <h1 className="category_header"><span style={{ fontWeight: '500', fontSize: '1rem' }}></span>
+              <span>View</span></h1>
+          </div>
 
+          <MdDelete onClick={() => this.deleteDialog.show()}
+          style={{ color: "#37b34a", fontSize: "1.8em" }}/>
+
+          
+          <MdEdit  onClick={this.navigateEditListing} 
+          style={{ color: "#37b34a", fontSize: "1.8em" }}/>
+
+
+<<<<<<< HEAD
 <MdDelete onClick={() => this.deleteDialog.show()}
 style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em" }}
 />
@@ -145,11 +155,16 @@ style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em" }}
 </header>
 
           
+=======
+        </header>
+
+
+
+>>>>>>> 49e958ace8ad982fa65572826f463f00c42fb011
 
 
 
 
-      
 
         <SkyLight dialogStyles={appModal} hideOnOverlayClicked ref={ref => this.deleteDialog = ref} title="Are you sure you want to Delete?">
 
@@ -169,7 +184,10 @@ style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em" }}
               description={item.Description}
               imagePath={item.Image}
               id={item._id}
+              unique_id={item.id}
             />
+
+            
           );
         })}
 
