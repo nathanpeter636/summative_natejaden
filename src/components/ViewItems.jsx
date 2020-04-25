@@ -79,7 +79,7 @@ getItems = (event) => {
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input
-            placeholder="Search Items . . ."
+            placeholder="Search Food Items . . ."
             className="autocomplete"
             type="text"
           />
