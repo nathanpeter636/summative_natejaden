@@ -1,6 +1,6 @@
 .category_header {
 
-    background: rgb(55,179,74);
+    background: rgba(0,147,69,1);
     background: linear-gradient(0deg, rgba(55,179,74,1) 0%, rgba(12,154,70,1) 24%, rgba(0,147,69,1) 43%, rgba(0,104,56,1) 77%);
     -webkit-background-clip: text;
     -moz-background-clip: text;

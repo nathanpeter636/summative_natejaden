@@ -5,6 +5,9 @@ import "../css/addlisting.css";
 import "../css/viewlisting.css"
 import Axios from "axios";
 
+import SkyLight from 'react-skylight';
+import { MdDelete } from "react-icons/md";
+
 import "../images/food-delivery.png";
 
 import Appleadd from "../images/appleadd.png";
@@ -44,9 +47,38 @@ export default class AddListings extends Component {
     console.log("getData");
 
     Axios.get(`http://localhost:4000/api/user-listing/${this.props.id}`).then(res => {
-      console.table(res.data);
       this.setState({ updatelisting: res.data });
     });
+  };
+
+  deleteData = event => {
+    console.log("deleteData");
+
+    // this.state = {  deleteButtonClicked: false};
+
+    Axios.delete(`http://localhost:4000/api/user-listing/${this.props.id}`).then(
+      res => {
+        console.table(res.data);
+
+
+        navigate(`/`);
+        // if (res.data.result === true) {
+
+        //   this.setState({ visible: false });
+
+
+
+        // }
+
+      }
+
+
+
+
+
+    )
+
+
   };
 
 
@@ -110,6 +142,8 @@ export default class AddListings extends Component {
         });
         };
 
+        
+
        
 
 
@@ -117,13 +151,47 @@ export default class AddListings extends Component {
         navigate(-1)
       }
 
+      navigateHome = (e) => {
+        navigate(`/`)
+      }
+    
+
 
 
      
     
 
 
-  render() {
+      render() {
+
+        var appModal = {
+          backgroundColor: 'white',
+          color: 'black',
+          width: '50vw',
+          height: '30vh',
+          minHeight: '30vh',
+    
+          marginTop: '-150px',
+          marginLeft: '-28%',
+          textAlign: 'center',
+    
+    
+          // display: 'flex',
+          // flexDirection: 'column',
+          // alignItems: 'center',
+          // justifyContent: 'center',
+    
+          display: 'flex',
+          flexDirection: 'column',
+    
+          justifyContent: 'space-evenly',
+          alignItems: 'center',
+          alignContent: 'stretch',
+    
+    
+    
+    
+        };
 
     
 
@@ -148,11 +216,21 @@ export default class AddListings extends Component {
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
 <div>
 <h1 className="category_header">
+&nbsp;&nbsp;
 <span>Edit Item</span></h1>
 </div>
+<MdDelete onClick={() => this.deleteDialog.show()}
+style={{ color: "rgba(12,154,70,1)", fontSize: "2.5rem" }}/>
 
 </div>
 </header>
+
+<SkyLight dialogStyles={appModal} hideOnOverlayClicked ref={ref => this.deleteDialog = ref} title="Are you sure you want to Delete?">
+
+
+<button className="delete_button" onClick={this.deleteData} >Yes</button>
+
+</SkyLight>
 
         <div className="form_wrapper">
           <div className="form_container">
@@ -255,14 +333,12 @@ export default class AddListings extends Component {
 
               <input type="hidden" name="id" value={Date.now()} />
 
-              <div className="button_wrapper">
+              <div className="button_wrapper" onClick={this.navigateHome}>
                 <button type="submit" className="add_button">
                   Done
                 </button>
               </div>
             </form>
-
-
 
             
           </div>

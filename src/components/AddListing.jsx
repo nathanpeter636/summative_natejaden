@@ -35,6 +35,10 @@ export default class AddListings extends Component {
     navigate(-1)
   }
 
+  navigateHome = (e) => {
+    navigate(`/`)
+  }
+
   handleCategoryFood = (event) => {
     this.setState({ Category: "Food" });
     console.table(this.state.Category);
@@ -189,7 +193,7 @@ export default class AddListings extends Component {
 
               <input type="hidden" name="id" value={Date.now()} />
 
-              <div className="button_wrapper">
+              <div className="button_wrapper" onClick={this.navigateHome}>
                 <button type="submit" className="add_button">
                   Done
                 </button>

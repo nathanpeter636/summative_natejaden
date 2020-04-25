@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import Axios from "axios";
 import "../css/home.css";
 import "../css/footer.css"
-import { IoMdAdd } from "react-icons/io";
 
+import TroveHome from "../images/trove-home.png";
+import Profile from "../images/profile.png";
 import Share from "../images/add.png";
 import Apple from "../images/apple.png";
 import Items from "../images/items.png";
 import Trovelogo from "../images/trove.png";
+
 import { navigate } from "@reach/router";
 
 class Home extends React.Component {
@@ -41,6 +43,9 @@ class Home extends React.Component {
     });
   };
 
+  navigateHome = (e) => {
+    navigate(`/`)
+  }
 
 
   navigateFood = (e) => {
@@ -75,9 +80,19 @@ class Home extends React.Component {
           <div className="footer_wrapper">
 
             <div className="Category_names">
-              <div className="food_button" onClick={this.navigateFood}>
-                <img className="Apple" src={Apple} alt="" />
-                <p>Food</p>
+              <div className="home_button" onClick={this.navigateHome}>
+                <img className="TroveHome" src={TroveHome} alt="" />
+                {/* <div className="space"></div>
+                <p>Home</p> */}
+              </div>
+
+            </div>
+
+            <div className="Category_names">
+              <div className="profile_button">
+                <img className="profile" src={Profile} alt="" />
+                {/* <div className="space"></div>
+                <p>Profile</p> */}
               </div>
 
             </div>
@@ -85,15 +100,26 @@ class Home extends React.Component {
             <div className="Category_names">
               <div className="add_listing" onClick={this.navigateAddlisting}>
                 <img className="Share" src={Share} alt="" />
-                <p>&nbsp;Upload</p>
+                {/* <div className="upload_space"></div>
+                <p>Upload</p> */}
               </div>
 
             </div>
 
             <div className="Category_names">
+              <div className="food_button" onClick={this.navigateFood}>
+                <img className="Apple" src={Apple} alt="" />
+                {/* <div className="space"></div>
+                <p>Food&nbsp;</p> */}
+              </div>
+
+              </div>
+
+            <div className="Category_names">
               <div className='items_button' onClick={this.navigateItems}>
                 <img className="Items" src={Items} alt="" />
-                <p>Items</p>
+                {/* <div className="space"></div>
+                <p>Items&nbsp;</p> */}
               </div>
             </div>
 

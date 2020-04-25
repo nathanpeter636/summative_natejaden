@@ -7,8 +7,6 @@ import Axios from "axios";
 import "../css/viewlisting.css"
 import "../css/footer.css";
 
-
-import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import { MdQuestionAnswer } from "react-icons/md";
 import { MdSettingsPhone } from "react-icons/md";
@@ -17,6 +15,8 @@ import BackArrow from "../images/back.png"
 import Apple from "../images/apple.png";
 import Share from "../images/add.png";
 import Items from "../images/items.png";
+import TroveHome from "../images/trove-home.png";
+import Profile from "../images/profile.png";
 
 
 
@@ -37,6 +37,10 @@ export default class ViewBook extends Component {
 
   navigatePrev = (e) => {
     navigate(-1)
+  }
+
+  navigateHome = (e) => {
+    navigate(`/`)
   }
   
 
@@ -161,12 +165,8 @@ export default class ViewBook extends Component {
             <h1 className="category_header">
               <span></span></h1>
           </div> */}
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <MdEdit  onClick={this.navigateEditListing} 
-          style={{ color: "#37b34a", fontSize: "2.25rem" }}/>
-          &nbsp;&nbsp;&nbsp;
-          <MdDelete onClick={() => this.deleteDialog.show()}
-          style={{ color: "#37b34a", fontSize: "2.5rem" }}/>
+          style={{ color: "rgba(12,154,70,1)", fontSize: "2.5rem" }}/>
   </div>
 
 
@@ -175,35 +175,55 @@ export default class ViewBook extends Component {
 
         <div className='footer'>
 
-          <div className="footer_wrapper">
+<div className="footer_wrapper">
 
-            <div className="Category_names">
-              <div className="food_button" onClick={this.navigateFood}>
-                <img className="Apple" src={Apple} alt="" />
-                <p>Food</p>
-              </div>
+  <div className="Category_names">
+    <div className="home_button" onClick={this.navigateHome}>
+      <img className="TroveHome" src={TroveHome} alt="" />
+      {/* <div className="space"></div>
+      <p>Home</p> */}
+    </div>
 
-            </div>
+  </div>
 
-            <div className="Category_names">
-              <div className="add_listing" onClick={this.navigateAddlisting}>
-                <img className="Share" src={Share} alt="" />
-                <p>&nbsp;Upload</p>
-              </div>
+  <div className="Category_names">
+    <div className="profile_button">
+      <img className="profile" src={Profile} alt="" />
+      {/* <div className="space"></div>
+      <p>Profile</p> */}
+    </div>
 
-            </div>
+  </div>
 
-            <div className="Category_names">
-              <div className='items_button' onClick={this.navigateItems}>
-                <img className="Items" src={Items} alt="" />
-                <p>Items</p>
-              </div>
-            </div>
+  <div className="Category_names">
+    <div className="add_listing" onClick={this.navigateAddlisting}>
+      <img className="Share" src={Share} alt="" />
+      {/* <div className="upload_space"></div>
+      <p>Upload</p> */}
+    </div>
 
-          </div>
+  </div>
 
-        </div>
+  <div className="Category_names">
+    <div className="food_button" onClick={this.navigateFood}>
+      <img className="Apple" src={Apple} alt="" />
+      {/* <div className="space"></div>
+      <p>Food&nbsp;</p> */}
+    </div>
 
+    </div>
+
+  <div className="Category_names">
+    <div className='items_button' onClick={this.navigateItems}>
+      <img className="Items" src={Items} alt="" />
+      {/* <div className="space"></div>
+      <p>Items&nbsp;</p> */}
+    </div>
+  </div>
+
+</div>
+
+</div>
 
 
 

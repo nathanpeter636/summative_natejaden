@@ -7,6 +7,8 @@ import BackArrow from "../images/back.png"
 import Apple from "../images/apple.png";
 import Share from "../images/add.png";
 import Items from "../images/items.png";
+import TroveHome from "../images/trove-home.png";
+import Profile from "../images/profile.png";
 
 import { MdArrowBack } from "react-icons/md";
 
@@ -42,6 +44,10 @@ getFood = (event) => {
 
   
   };
+
+  navigateHome = (e) => {
+    navigate(`/`)
+  }
 
   navigateFood = (e) => {
     navigate(`/view-food`)
@@ -81,44 +87,68 @@ getFood = (event) => {
 <div className="share_header_wrapper">
 
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
-<div>
-<h1 className="category_header">
-<span>Search Food</span></h1>
-</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input
+            placeholder="Search food items . . ."
+            className="autocomplete"
+            type="text"
+          />
+
 
 </div>
 </header>
 
 <div className='footer'>
 
-  <div className="footer_wrapper">
+          <div className="footer_wrapper">
 
-<div className="Category_names">
-  <div className="food_button" onClick={this.navigateFood}>
-    <img className="Apple" src={Apple} alt="" />
-    <p>Food</p>
-</div>
+            <div className="Category_names">
+              <div className="home_button" onClick={this.navigateHome}>
+                <img className="TroveHome" src={TroveHome} alt="" />
+                {/* <div className="space"></div>
+                <p>Home</p> */}
+              </div>
 
-  </div>
+            </div>
 
-<div className="Category_names">
-  <div className="add_listing" onClick={this.navigateAddlisting}>
-    <img className="Share" src={Share} alt="" />
-    <p>&nbsp;Upload</p>
-</div>
+            <div className="Category_names">
+              <div className="profile_button">
+                <img className="profile" src={Profile} alt="" />
+                {/* <div className="space"></div>
+                <p>Profile</p> */}
+              </div>
 
-</div>
+            </div>
 
-<div className="Category_names">
-  <div className='items_button' onClick={this.navigateItems}>
-    <img className="Items" src={Items} alt="" />
-    <p>Items</p>
-    </div>
-  </div>
+            <div className="Category_names">
+              <div className="add_listing" onClick={this.navigateAddlisting}>
+                <img className="Share" src={Share} alt="" />
+                {/* <div className="upload_space"></div>
+                <p>Upload</p> */}
+              </div>
 
-  </div>
+            </div>
 
-</div>
+            <div className="Category_names">
+              <div className="food_button" onClick={this.navigateFood}>
+                <img className="Apple" src={Apple} alt="" />
+                {/* <div className="space"></div>
+                <p>Food&nbsp;</p> */}
+              </div>
+
+              </div>
+
+            <div className="Category_names">
+              <div className='items_button' onClick={this.navigateItems}>
+                <img className="Items" src={Items} alt="" />
+                {/* <div className="space"></div>
+                <p>Items&nbsp;</p> */}
+              </div>
+            </div>
+
+          </div>
+
+        </div>
 
 <div className="page_margin"></div>
 
