@@ -138,7 +138,6 @@ export default class ViewBook extends Component {
 </div>
 
 
-<<<<<<< HEAD
 <div className="tertiary_actions">
           <MdDelete onClick={() => this.deleteDialog.show()}
          
@@ -152,20 +151,8 @@ export default class ViewBook extends Component {
 
           </div>
         </header>
-=======
-<div style={{position: 'absolute', right: '5%'}}>
-<MdDelete onClick={() => this.deleteDialog.show()}
-style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em"}}
-/>
 
-<MdEdit onClick={this.navigateEdit}
-style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em" }}
-/>
-</div>
->>>>>>> jadenUpdatedCssBranch
-
-
-</header>
+<div/>
 
           
 
