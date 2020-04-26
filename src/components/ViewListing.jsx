@@ -67,24 +67,17 @@ export default class ViewBook extends Component {
 
 
         navigate(`/`);
-        // if (res.data.result === true) {
 
-        //   this.setState({ visible: false });
-
-
-
-        // }
 
       }
-
-
-
 
 
     )
 
 
   };
+
+
 
 
 
@@ -129,37 +122,37 @@ export default class ViewBook extends Component {
 
 
 
-<header className="share_header">
+        <header className="share_header">
 
-<img src={BackArrow} onClick={this.navigatePrev} alt=""/>
-<div>
-<h1 className="category_header"><span style={{fontWeight: '500', fontSize: '1rem'}}></span> 
-<span>View</span></h1>
-</div>
-
-
-<div className="tertiary_actions">
-          <MdDelete onClick={() => this.deleteDialog.show()}
-         
+          <img src={BackArrow} onClick={this.navigatePrev} alt="" />
+          <div>
+            <h1 className="category_header"><span style={{ fontWeight: '500', fontSize: '1rem' }}></span>
+              <span>View</span></h1>
+          </div>
 
 
-            style={{ color: "black", fontSize: "1.8em" }}
-          />
+          <div className="tertiary_actions">
+            <MdDelete onClick={() => this.deleteDialog.show()}
 
-          
-          <MdEdit  onClick={this.navigateEditListing} style={{ color: "black", fontSize: "1.8em" }}/>
+
+
+              style={{ color: "black", fontSize: "1.8em" }}
+            />
+
+
+            <MdEdit onClick={this.navigateEdit} style={{ color: "black", fontSize: "1.8em" }} />
 
           </div>
         </header>
 
-<div/>
-
-          
+        <div />
 
 
 
 
-      
+
+
+
 
         <SkyLight dialogStyles={appModal} hideOnOverlayClicked ref={ref => this.deleteDialog = ref} title="Are you sure you want to Delete?">
 
@@ -196,7 +189,7 @@ export class ShowListing extends React.Component {
     super(props);
 
 
-    
+
 
     console.log(this.state);
   }
@@ -234,32 +227,32 @@ export class ShowListing extends React.Component {
       <div>
 
 
-<div className="skylight_container">
-        <SkyLight hideOnOverlayClicked ref={ref => this.questionDialog = ref} title="Ask a question">
+        <div className="skylight_container">
+          <SkyLight hideOnOverlayClicked ref={ref => this.questionDialog = ref} title="Ask a question">
 
-          <h2> Name </h2>
+            <h2> Name </h2>
 
-          <input style={{ color: "gray" }} type="text" name="Title" required />
+            <input style={{ color: "gray" }} type="text" name="Title" required />
 
-          <h2> Question</h2>
+            <h2> Question</h2>
 
-          <input style={{ color: "gray" }} type="text" name="Title" required />
+            <input style={{ color: "gray" }} type="text" name="Title" required />
 
-          <button style={{color: 'red', fontSize: '2rem'}}onClick={this.deleteData} >Done</button>
+            <button style={{ color: 'red', fontSize: '2rem' }} onClick={this.deleteData} >Done</button>
 
-        </SkyLight>
+          </SkyLight>
         </div>
 
 
 
 
-        
+
 
         <img className="listing_image"
           src={"http://localhost:4000/assets/" + this.props.imagePath}
           alt=""
         />
-        
+
 
 
 
@@ -268,7 +261,7 @@ export class ShowListing extends React.Component {
 
           <div className="lisitng_title">
 
-            <h1 style={{marginTop: '0%'}}>{this.props.title}</h1>
+            <h1 style={{ marginTop: '0%' }}>{this.props.title}</h1>
             <h2>{this.props.description}</h2>
 
           </div>
@@ -288,11 +281,11 @@ export class ShowListing extends React.Component {
 
         </div>
 
-       
+
 
         <div className="contact_box_container">
 
-          
+
 
           <MdSettingsPhone style={{ fontSize: '4rem', color: '' }} />
 
@@ -305,7 +298,7 @@ export class ShowListing extends React.Component {
 
 
 
-         
+
 
 
 
