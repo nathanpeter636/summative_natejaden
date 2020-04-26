@@ -160,7 +160,7 @@ export default class ViewBook extends Component {
               <span></span></h1>
           </div> */}
           <MdEdit  onClick={this.navigateEditListing} 
-          style={{ color: "rgba(12,154,70,1)", fontSize: "2.5rem" }}/>
+          style={{ color: "rgba(12,154,70,1)", fontSize: "2.5rem", marginLeft: "70%" }}/>
   </div>
 
 
