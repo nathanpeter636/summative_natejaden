@@ -181,6 +181,21 @@ export default class AddListings extends Component {
       };
     
      
+
+      navigateViewlisting = (e) => {
+        navigate(`/view-listing-details/${this.props.id}`);
+    
+        console.log(this.props.id);
+    
+            // // Axios.put(http://localhost:4000/api/users/${this.props.id})
+            // // .then( res=> {
+            // //     console.table(this.props.id)
+      
+            // // }
+      
+            // )
+      };
+    
     
 
 
@@ -355,7 +370,7 @@ style={{ color: "rgba(12,154,70,1)", fontSize: "2.5rem" }}/>
 
               <input type="hidden" name="id" value={Date.now()} />
 
-              <div className="button_wrapper" onClick={this.navigateHome}>
+              <div className="button_wrapper" onClick={this. navigateViewlisting}>
                 <button type="submit" className="add_button">
                   Done
                 </button>
