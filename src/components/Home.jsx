@@ -3,15 +3,30 @@ import Axios from "axios";
 import "../css/home.css";
 import { IoMdAdd } from "react-icons/io";
 
-import Share from "../images/hands.png";
+import Share from "../images/add.png";
+import Apple from "../images/apple.png";
+import Items from "../images/items.png";
+import Trovelogo from "../images/trove.png";
 import { navigate } from "@reach/router";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { listings: [] };
+    this.state = { listings: [], 
+    
+
+      
+      
+    
+    
+    };
   }
+
+
+  // updateSearch(event) {
+  //   this.setState()
+  // }
 
   componentDidMount() {
     this.getData();
@@ -32,10 +47,26 @@ class Home extends React.Component {
     console.log("getData");
 
     Axios.get("http://localhost:4000/api/user-listing").then((res) => {
-      console.table(res.data);
-      this.setState({ listings: res.data });
-    });
+      
+    
+
+      this.setState({ listings: res.data,
+      filteredlist: res.data,});
+
+      console.table(this.state.filteredlist)
+      
+    })
+
+    
+
   };
+
+
+
+ 
+
+ 
+  
 
 
 
@@ -49,18 +80,17 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="Master_container">
         <div className="Message_container">
-          <h2>
-            Give and recieve <br />
-            multiple items throughtout <br />
-            NZ for those in need.
-          </h2>
+          
+          <img className="Trovelogo" src={Trovelogo} alt="" />
+          
 
           <input
-            placeholder="Type Something..."
+            placeholder="Search with Trove . . ."
             className="autocomplete"
             type="text"
+            
           />
         </div>
 
@@ -68,40 +98,42 @@ class Home extends React.Component {
           123 Total Listings
         </h2> */}
 
-        <div className='category_wrappers'>
+<div className='category_wrappers'>
 
-          
-          <div className="food_button" onClick={this.navigateFood}>
-          
-          
-       
-          </div>
-         
+<div className="Category_names">
+  <div className="food_button" onClick={this.navigateFood}>
+    <img className="Apple" src={Apple} alt="" />
+    <p>Food</p>
+</div>
 
-          <div className='items_button' onClick={this.navigateItems}>
-            
-          </div>
+  </div>
 
-         
+<div className="Category_names">
+  <div className="add_listing" onClick={this.navigateAddlisting}>
+    <img className="Share" src={Share} alt="" />
+    <p>&nbsp;Upload</p>
+</div>
+
+</div>
+
+<div className="Category_names">
+  <div className='items_button' onClick={this.navigateItems}>
+    <img className="Items" src={Items} alt="" />
+    <p>Items</p>
+    </div>
+  </div>
+
+
+
+</div>
+
+
         
-        </div>
 
-        <div className="Category_names">
-            <p>Food</p>
-            <p>Items</p>
-          </div>
-
-        
-
-        <div className="home_listing_wrap">
-          <div className="add_listing" onClick={this.navigateAddlisting}>
-            <img src={Share} alt="" />
-
-            <p>Share with others</p>
-          </div>
+        <div className="home_listing_wrap" >
 
           {this.state.listings.map((item, i) => {
-            return (
+            return  (
               <Showdata
                 key={i}
                 title={item.Title}
@@ -112,7 +144,7 @@ class Home extends React.Component {
                 id={item._id}
                
               />
-            );
+            ) ;
           })}
         </div>
       </div>
@@ -125,7 +157,14 @@ export class Showdata extends React.Component {
 
   constructor(props) {
     super(props); 
+
+  
+   this.state = {zoom: false}
+  
+
   }
+
+
 
 
   deleteData = event => {
@@ -139,12 +178,9 @@ export class Showdata extends React.Component {
 
         if (res.data.result === true) {
 
-          this.setState({ visible: false });
+       
 
-         
-
-          
-          
+        
         }
         
       }
@@ -155,16 +191,16 @@ export class Showdata extends React.Component {
   navigateViewlisting = (e) => {
     navigate(`/view-listing-details/${this.props.id}`);
 
-    console.log(this.props.id);
 
-        // // Axios.put(`http://localhost:4000/api/users/${this.props.id}`)
-        // // .then( res=> {
-        // //     console.table(this.props.id)
-  
-        // // }
-  
-        // )
+    
+   
   };
+
+  handleZoom = (e) => {
+
+    this.setState({zoom: true})
+
+  }
 
  
 
@@ -174,8 +210,9 @@ export class Showdata extends React.Component {
   render() {
     return (
 
+      //className={this.state.zoom ? 'zoom' : null} onTransitionEnd={this.navigateAdduser}
 
-      <div className="data_container" onClick={this.navigateViewlisting}>
+      <div className={"data_container"}  onClick={this.navigateViewlisting}>
         
         <h2>{this.props.title}</h2>
 

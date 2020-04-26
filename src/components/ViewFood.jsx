@@ -4,11 +4,14 @@ import { navigate } from "@reach/router";
 
 
 import BackArrow from "../images/back.png"
-
+import Apple from "../images/apple.png";
+import Share from "../images/add.png";
+import Items from "../images/items.png";
 
 import { MdArrowBack } from "react-icons/md";
 
-import "../css/viewcategory.css"
+import "../css/viewcategory.css";
+import "../css/footer.css";
 
 
 
@@ -33,6 +36,8 @@ getFood = (event) => {
       food: res.data.filter(data => data.Category === "Food") }
       
       )
+
+
 
       console.table(this.state.food)
   });
@@ -59,6 +64,22 @@ getFood = (event) => {
   };
 
 
+  navigateFood = (e) => {
+    navigate(`/view-food`)
+  }
+
+  navigateItems = (e) => {
+    navigate(`/view-items`)
+  }
+
+  navigateAddlisting = (e) => {
+
+
+    navigate(`/addlisting`);
+
+    
+  };
+
 
     render() {
         return (
@@ -68,13 +89,40 @@ getFood = (event) => {
 
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
 <div>
-<h1 className="category_header"><span style={{fontWeight: '500', fontSize: '1rem', marginLeft: '-50px'}}>Browse  >  </span> 
-<span style={{fontWeight: '500'}}>Food</span></h1>
+<h1 className="category_header">
+<span>Food</span></h1>
 </div>
 
 </header>
 
+<div className='category_wrappers'>
 
+<div className="Category_names">
+  <div className="food_button" onClick={this.navigateFood}>
+    <img className="Apple" src={Apple} alt="" />
+    <p>Food</p>
+</div>
+
+  </div>
+
+<div className="Category_names">
+  <div className="add_listing" onClick={this.navigateAddlisting}>
+    <img className="Share" src={Share} alt="" />
+    <p>&nbsp;Upload</p>
+</div>
+
+</div>
+
+<div className="Category_names">
+  <div className='items_button' onClick={this.navigateItems}>
+    <img className="Items" src={Items} alt="" />
+    <p>Items</p>
+    </div>
+  </div>
+
+
+
+</div>
 
 {this.state.food.map((food, i) => {
             return (

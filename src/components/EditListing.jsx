@@ -118,6 +118,26 @@ export default class AddListings extends Component {
       }
 
 
+      getData = event => {
+        console.log("getData");
+    
+        Axios.get(`http://localhost:4000/api/user-listing/${this.props.id}`).then(res => {
+          console.table(res.data);
+          this.setState({ updatelisting: res.data });
+        });
+      };
+    
+
+
+      navigateViewlisting = (e) => {
+        
+          
+            navigate(`/view-listing-details/${this.props.id}`)
+          
+          
+     
+        
+      };
 
      
     
@@ -252,7 +272,7 @@ export default class AddListings extends Component {
               <input type="hidden" name="id" value={Date.now()} />
 
               <div className="button_wrapper">
-                <button type="submit" className="add_button">
+                <button onClick={this.navigateViewlisting} type="submit" className="add_button">
                   Done
                 </button>
               </div>

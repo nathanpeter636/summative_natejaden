@@ -7,13 +7,11 @@ import Axios from "axios";
 import "../css/viewlisting.css"
 
 import { MdDelete } from "react-icons/md";
-
-
-
-import { MdEdit } from "react-icons/md";
-
 import { MdQuestionAnswer } from "react-icons/md";
 import { MdSettingsPhone } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
+
+
 
 import BackArrow from "../images/back.png"
 
@@ -29,8 +27,7 @@ export default class ViewBook extends Component {
     super(props);
 
 
-    this.state = { listing: [], }
-  
+    this.state = { listing: [] }
   }
 
 
@@ -38,17 +35,22 @@ export default class ViewBook extends Component {
     navigate(-1)
   }
 
+  navigateEdit = (e) => {
+    navigate(`/edit-listing/${this.props.id}`)
+  }
 
 
-  componentDidMount() {
-
-
+  getData = (e) => {
     Axios.get(`http://localhost:4000/api/user-listing/${this.props.id}`).then(res => {
 
       console.log(`http://localhost:4000/api/user-listing/${this.props.id}`);
       this.setState({ listing: res.data });
     });
+  }
 
+  componentDidMount() {
+
+    this.getData()
 
   }
 
@@ -85,14 +87,6 @@ export default class ViewBook extends Component {
   };
 
 
-
-    navigateEditListing = e => {
-
-      navigate(`/edit-listing/${this.props.id}`)
-
-      console.log(this.props.id)
-
-    }
 
 
 
@@ -135,15 +129,16 @@ export default class ViewBook extends Component {
 
 
 
-        <header className="share_header">
+<header className="share_header">
 
-          <img src={BackArrow} onClick={this.navigatePrev} alt="" />
-          <div>
-            <h1 className="category_header"><span style={{ fontWeight: '500', fontSize: '1rem' }}></span>
-              <span style={{ fontWeight: '500' }}>View</span></h1>
-          </div>
+<img src={BackArrow} onClick={this.navigatePrev} alt=""/>
+<div>
+<h1 className="category_header"><span style={{fontWeight: '500', fontSize: '1rem'}}></span> 
+<span>View</span></h1>
+</div>
 
 
+<<<<<<< HEAD
 <div className="tertiary_actions">
           <MdDelete onClick={() => this.deleteDialog.show()}
          
@@ -157,18 +152,32 @@ export default class ViewBook extends Component {
 
           </div>
         </header>
+=======
+<div style={{position: 'absolute', right: '5%'}}>
+<MdDelete onClick={() => this.deleteDialog.show()}
+style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em"}}
+/>
+
+<MdEdit onClick={this.navigateEdit}
+style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em" }}
+/>
+</div>
+>>>>>>> jadenUpdatedCssBranch
+
+
+</header>
+
+          
 
 
 
 
-
-
-
+      
 
         <SkyLight dialogStyles={appModal} hideOnOverlayClicked ref={ref => this.deleteDialog = ref} title="Are you sure you want to Delete?">
 
 
-          <button onClick={this.deleteData} >Yes</button>
+          <button className="delete_button" onClick={this.deleteData} >Yes</button>
 
         </SkyLight>
 
@@ -183,10 +192,7 @@ export default class ViewBook extends Component {
               description={item.Description}
               imagePath={item.Image}
               id={item._id}
-              unique_id={item.id}
             />
-
-            
           );
         })}
 
@@ -203,81 +209,70 @@ export class ShowListing extends React.Component {
     super(props);
 
 
-    this.state = { questions: [], Name:"", Description: "", listing_id: 0}
-    this.questionsRef = React.createRef();
+    
 
     console.log(this.state);
-
-
   }
-
-
-  onCommentsSubmit = e => {
-    this.setState({ listing_id: this.state.id });
-
-    console.log(this.state.id)
-
-    
-  };
-
 
   render() {
 
-  
+
+
+
+
+
+
+
+
+
+    // const HorizontalLine = ({ color }) => (
+    //   <hr
+    //     style={{
+
+    //       position: 'absolute',
+    //       bottom: '150px',
+    //       zIndex: '10',
+    //       opacity: '0.5',
+    //       backgroundColor: color,
+
+    //       width: '100vw',
+    //     }}
+    //   />
+    // );
 
     return (
-
-
-     <React.Fragment>
-
-     {/* {this.state.questions.map((question, i) => {
-      return (
-        <ShowQuestions
-          key={i}
-          name={question.Name}
-          comment={question.description}
-          
-         
-        />
-      );
-    })} */}
 
 
 
       <div>
 
-{/* <form onSubmit={this.handleSubmit} ref={this.formRef}> */}
 
-        <div className="skylight_container">
-      <form onSubmit={this.onCommentsSubmit} ref={this.questionsRef}>
+<div className="skylight_container">
+        <SkyLight hideOnOverlayClicked ref={ref => this.questionDialog = ref} title="Ask a question">
 
-          <SkyLight hideOnOverlayClicked ref={ref => this.questionDialog = ref} title="Make a Comment">
+          <h2> Name </h2>
 
-            <h2> Name </h2>
+          <input style={{ color: "gray" }} type="text" name="Title" required />
 
-            <input style={{ color: "gray" }} type="text" name="Title" required />
+          <h2> Question</h2>
 
-            <h2> Comment</h2>
+          <input style={{ color: "gray" }} type="text" name="Title" required />
 
-            <input style={{ color: "gray" }} type="text" name="Title" required />
+          <button style={{color: 'red', fontSize: '2rem'}}onClick={this.deleteData} >Done</button>
 
-            <button type='submit' style={{ color: 'red', fontSize: '2rem' }} >Done</button>
-
-          </SkyLight>
-
-          </form>
+        </SkyLight>
         </div>
 
 
 
 
-
+        
 
         <img className="listing_image"
           src={"http://localhost:4000/assets/" + this.props.imagePath}
           alt=""
         />
-
+        
 
 
 
@@ -286,7 +281,7 @@ export class ShowListing extends React.Component {
 
           <div className="lisitng_title">
 
-            <h1 style={{ marginTop: '0%' }}>{this.props.title}</h1>
+            <h1 style={{marginTop: '0%'}}>{this.props.title}</h1>
             <h2>{this.props.description}</h2>
 
           </div>
@@ -306,11 +301,11 @@ export class ShowListing extends React.Component {
 
         </div>
 
-
+       
 
         <div className="contact_box_container">
 
-
+          
 
           <MdSettingsPhone style={{ fontSize: '4rem', color: '' }} />
 
@@ -323,7 +318,7 @@ export class ShowListing extends React.Component {
 
 
 
-
+         
 
 
 
@@ -335,8 +330,6 @@ export class ShowListing extends React.Component {
 
 
       </div>
-
-      </React.Fragment>
     )
   }
 

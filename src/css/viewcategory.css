@@ -4,9 +4,20 @@
 
 .category_header {
 
+    background: rgb(55,179,74);
+    background: linear-gradient(0deg, rgba(55,179,74,1) 0%, rgba(12,154,70,1) 24%, rgba(0,147,69,1) 43%, rgba(0,104,56,1) 77%);
+   background-clip: text;
+
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
     
+
+    font-size: 2.2rem;
+    font-Weight: '600';
+    letter-spacing: 0.02em;
     position: relative;
-    
+    display: flex;
+
 
 }
 
@@ -14,24 +25,23 @@
     position: unset;
 }
 
+/* .outer_wrapper {
+    padding-top: 30%;
+} */
+
 
 .share_header img {
-    width: 20px;
+    width: .7rem;
     height: auto;
-    
     
     
     position: absolute;
     left: 20px;
+    
 }
 
-.outer_wrapper {
-    padding-top: 30%;
-}
 
 .listing_box_wrapper {
-
-   
     display: flex;
     flex-direction: column;
    background-color: white;
@@ -40,8 +50,6 @@
 }
 
 .listing_box_container {
-
-   
 
     display: flex;
 
@@ -64,7 +72,17 @@ flex-direction: column;
 }
 
 .listing_details_container h2 {
-    font-weight: 500;
+    letter-spacing: 0.02rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: rgb(97, 97, 97);
+}
+
+.listing_details_container h3 {
+    letter-spacing: 0.02rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: rgb(160, 160, 160);
 }
 
 .listing_box_container img {
