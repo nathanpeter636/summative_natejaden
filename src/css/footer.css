@@ -1,12 +1,8 @@
-.category_wrappers {
+.footer {
     width: 100vw;
-    height: 5rem;;
-    display: flex;
-    flex-direction: row;
- 
-    justify-content: space-evenly;
-    align-items: center;
     background-color: rgb(253, 253, 253);
+    display: flex;
+    justify-content: space-around;
 
 
     z-index: 1000;
@@ -14,19 +10,19 @@
     left: 0;
     bottom: 0;
 
-    -webkit-box-shadow: -1px 73px 44px 34px rgba(0,0,0,0.32);
-    -moz-box-shadow: -1px 73px 44px 34px rgba(0,0,0,0.32);
-    box-shadow: -1px 73px 44px 34px rgba(0,0,0,0.32);
-
-  
-
-
+    -webkit-box-shadow: 0px -3px 50px 0px rgba(0,0,0,0.32);
+    -moz-box-shadow: 0px -3px 50px 0px rgba(0,0,0,0.32);
+    box-shadow: 0px -3px 50px 0px rgba(0,0,0,0.32);
 }
 
-
-.Category_names {
+.footer_wrapper {
+    width: 85%;
+    height: 5rem;;
     display: flex;
-    flex-basis: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(253, 253, 253);
 }
 
 .Category_names p {
@@ -45,20 +41,52 @@
 
 
 .Share {
-    width: 1.7rem;
-    height: 1.7rem;
+    width: 2.2rem;
+    height: 2.2rem;
     padding: .5rem;
     border-radius: 33px;
     border: solid 3.5px #37b34a;
     
 }
 
-.Apple {
-    width: 2.5rem;
+ .Apple, .Items{
+    width: auto;
     height: 2.5rem;
 }
- 
-.Items {
-    width: 2.5rem;
-    height: 2.5rem;
+
+.TroveHome {
+    width: auto;
+    height: 2.25rem;
 }
+
+.profile { 
+    width: 1.6rem;
+    height: 2.25rem;
+}
+
+
+.add_listing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .home_button,
+.profile_button,
+.food_button,
+.items_button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.7rem;
+
+} */
+
+/* .space {
+    height: 0.2rem;
+}
+
+.upload_space {
+    height: 0.1rem;
+}
+  */

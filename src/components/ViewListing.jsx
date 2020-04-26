@@ -5,15 +5,19 @@ import SkyLight from 'react-skylight';
 import { navigate } from "@reach/router";
 import Axios from "axios";
 import "../css/viewlisting.css"
+import "../css/footer.css";
 
-import { MdDelete } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
 import { MdQuestionAnswer } from "react-icons/md";
 import { MdSettingsPhone } from "react-icons/md";
-import { MdEdit } from "react-icons/md";
-
-
 
 import BackArrow from "../images/back.png"
+import Apple from "../images/apple.png";
+import Share from "../images/add.png";
+import Items from "../images/items.png";
+import TroveHome from "../images/trove-home.png";
+import Profile from "../images/profile.png";
+
 
 
 
@@ -35,22 +39,37 @@ export default class ViewBook extends Component {
     navigate(-1)
   }
 
-  navigateEdit = (e) => {
-    navigate(`/edit-listing/${this.props.id}`)
+  navigateHome = (e) => {
+    navigate('/')
+  }
+  
+
+  navigateFood = (e) => {
+    navigate('/view-food')
   }
 
+  navigateItems = (e) => {
+    navigate('/view-items')
+  }
 
-  getData = (e) => {
+  navigateAddlisting = (e) => {
+
+
+    navigate('/addlisting');
+
+    
+  };
+
+
+  componentDidMount() {
+
+
     Axios.get(`http://localhost:4000/api/user-listing/${this.props.id}`).then(res => {
 
       console.log(`http://localhost:4000/api/user-listing/${this.props.id}`);
       this.setState({ listing: res.data });
     });
-  }
 
-  componentDidMount() {
-
-    this.getData()
 
   }
 
@@ -66,7 +85,7 @@ export default class ViewBook extends Component {
         console.table(res.data);
 
 
-        navigate(`/`);
+        navigate('/');
         // if (res.data.result === true) {
 
         //   this.setState({ visible: false });
@@ -87,6 +106,14 @@ export default class ViewBook extends Component {
   };
 
 
+
+    navigateEditListing = e => {
+
+      navigate(`/edit-listing/${this.props.id}`)
+
+      console.log(this.props.id)
+
+    }
 
 
 
@@ -129,39 +156,85 @@ export default class ViewBook extends Component {
 
 
 
+
 <header className="share_header">
+  <div className="share_header_wrapper">
 
-<img src={BackArrow} onClick={this.navigatePrev} alt=""/>
-<div>
-<h1 className="category_header"><span style={{fontWeight: '500', fontSize: '1rem'}}></span> 
-<span>View</span></h1>
+          <img src={BackArrow} onClick={this.navigatePrev} alt="" />
+          {/* <div>
+            <h1 className="category_header">
+              <span></span></h1>
+          </div> */}
+          <MdEdit  onClick={this.navigateEditListing} 
+          style={{ color: "rgba(12,154,70,1)", fontSize: "2.5rem" }}/>
+  </div>
+
+
+        </header>
+
+
+        <div className='footer'>
+
+<div className="footer_wrapper">
+
+  <div className="Category_names">
+    <div className="home_button" onClick={this.navigateHome}>
+      <img className="TroveHome" src={TroveHome} alt="" />
+      {/* <div className="space"></div>
+      <p>Home</p> */}
+    </div>
+
+  </div>
+
+  <div className="Category_names">
+    <div className="profile_button">
+      <img className="profile" src={Profile} alt="" />
+      {/* <div className="space"></div>
+      <p>Profile</p> */}
+    </div>
+
+  </div>
+
+  <div className="Category_names">
+    <div className="add_listing" onClick={this.navigateAddlisting}>
+      <img className="Share" src={Share} alt="" />
+      {/* <div className="upload_space"></div>
+      <p>Upload</p> */}
+    </div>
+
+  </div>
+
+  <div className="Category_names">
+    <div className="food_button" onClick={this.navigateFood}>
+      <img className="Apple" src={Apple} alt="" />
+      {/* <div className="space"></div>
+      <p>Food&nbsp;</p> */}
+    </div>
+
+    </div>
+
+  <div className="Category_names">
+    <div className='items_button' onClick={this.navigateItems}>
+      <img className="Items" src={Items} alt="" />
+      {/* <div className="space"></div>
+      <p>Items&nbsp;</p> */}
+    </div>
+  </div>
+
+</div>
+
 </div>
 
 
-<div style={{position: 'absolute', right: '5%'}}>
-<MdDelete onClick={() => this.deleteDialog.show()}
-style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em"}}
-/>
-
-<MdEdit onClick={this.navigateEdit}
-style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em" }}
-/>
-</div>
-
-
-</header>
-
-          
 
 
 
 
-      
 
         <SkyLight dialogStyles={appModal} hideOnOverlayClicked ref={ref => this.deleteDialog = ref} title="Are you sure you want to Delete?">
 
 
-          <button className="delete_button" onClick={this.deleteData} >Yes</button>
+          <button onClick={this.deleteData} >Yes</button>
 
         </SkyLight>
 
@@ -176,7 +249,10 @@ style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em" }}
               description={item.Description}
               imagePath={item.Image}
               id={item._id}
+              unique_id={item.id}
             />
+
+            
           );
         })}
 
@@ -192,8 +268,6 @@ export class ShowListing extends React.Component {
   constructor(props) {
     super(props);
 
-
-    
 
     console.log(this.state);
   }
@@ -291,12 +365,12 @@ export class ShowListing extends React.Component {
 
           
 
-          <MdSettingsPhone style={{ fontSize: '4rem', color: '' }} />
+          <MdSettingsPhone style={{ fontSize: '3rem', color: '' }} />
 
           {/* <h3 style={{ fontSize: "1.5rem" }}>{this.props.phone}</h3> */}
 
 
-          <MdQuestionAnswer style={{ fontSize: '4rem' }}
+          <MdQuestionAnswer style={{ fontSize: '3rem' }}
             onClick={() => this.questionDialog.show()}
           />
 

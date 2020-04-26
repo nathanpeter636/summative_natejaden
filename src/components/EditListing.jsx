@@ -2,14 +2,17 @@ import React, { Component } from "react";
 
 
 import "../css/addlisting.css";
-
+import "../css/viewlisting.css"
 import Axios from "axios";
+
+import SkyLight from 'react-skylight';
+import { MdDelete } from "react-icons/md";
 
 import "../images/food-delivery.png";
 
-import fooddelivery from "../images/shopping-bag.png";
-import household from "../images/household (1).png";
-import uploadphoto from "../images/photo.png";
+import Appleadd from "../images/appleadd.png";
+import Itemadd from "../images/itemadd.png";
+import uploadphoto from "../images/uploadimg.png";
 import BackArrow from "../images/back.png"
 
 import { navigate } from "@reach/router";
@@ -44,9 +47,38 @@ export default class AddListings extends Component {
     console.log("getData");
 
     Axios.get(`http://localhost:4000/api/user-listing/${this.props.id}`).then(res => {
-      console.table(res.data);
       this.setState({ updatelisting: res.data });
     });
+  };
+
+  deleteData = event => {
+    console.log("deleteData");
+
+    // this.state = {  deleteButtonClicked: false};
+
+    Axios.delete(`http://localhost:4000/api/user-listing/${this.props.id}`).then(
+      res => {
+        console.table(res.data);
+
+
+        navigate(`/`);
+        // if (res.data.result === true) {
+
+        //   this.setState({ visible: false });
+
+
+
+        // }
+
+      }
+
+
+
+
+
+    )
+
+
   };
 
 
@@ -110,12 +142,19 @@ export default class AddListings extends Component {
         });
         };
 
+        
+
        
 
 
       navigatePrev = (e) => {
         navigate(-1)
       }
+
+      navigateHome = (e) => {
+        navigate(`/`)
+      }
+    
 
 
       getData = event => {
@@ -143,7 +182,36 @@ export default class AddListings extends Component {
     
 
 
-  render() {
+      render() {
+
+        var appModal = {
+          backgroundColor: 'white',
+          color: 'black',
+          width: '50vw',
+          height: '30vh',
+          minHeight: '30vh',
+    
+          marginTop: '-150px',
+          marginLeft: '-28%',
+          textAlign: 'center',
+    
+    
+          // display: 'flex',
+          // flexDirection: 'column',
+          // alignItems: 'center',
+          // justifyContent: 'center',
+    
+          display: 'flex',
+          flexDirection: 'column',
+    
+          justifyContent: 'space-evenly',
+          alignItems: 'center',
+          alignContent: 'stretch',
+    
+    
+    
+    
+        };
 
     
 
@@ -162,37 +230,51 @@ export default class AddListings extends Component {
 
 
 
-      <header className="share_header">
+<header className="share_header">
+<div className="share_header_wrapper">
 
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
 <div>
 <h1 className="category_header">
-<span style={{fontWeight: '500'}}>Edit listing</span></h1>
+&nbsp;&nbsp;
+<span>Edit Item</span></h1>
 </div>
+<MdDelete onClick={() => this.deleteDialog.show()}
+style={{ color: "rgba(12,154,70,1)", fontSize: "2.5rem" }}/>
 
+</div>
 </header>
+
+<SkyLight dialogStyles={appModal} hideOnOverlayClicked ref={ref => this.deleteDialog = ref} title="Are you sure you want to Delete?">
+
+
+<button className="delete_button" onClick={this.deleteData} >Yes</button>
+
+</SkyLight>
 
         <div className="form_wrapper">
           <div className="form_container">
             <form onSubmit={this.editListing} ref={this.editRef}>
+            <div className="share_page_margin">
               <h1>
                 {" "}
                 Food or Item?
               </h1>
+            </div>
 
               <div className="form_icons_wrapper">
                 <div className="food_icons_container">
                   <img
                     
                     value=''
-                    src={fooddelivery}
+                    src={Appleadd}
                     alt=""
                   />
 
                   <img
                     
                     value=''
-                    src={household}
+                    src={Itemadd}
                     alt=""
                   />
                 </div>
@@ -271,14 +353,12 @@ export default class AddListings extends Component {
 
               <input type="hidden" name="id" value={Date.now()} />
 
-              <div className="button_wrapper">
-                <button onClick={this.navigateViewlisting} type="submit" className="add_button">
+              <div className="button_wrapper" onClick={this.navigateHome}>
+                <button type="submit" className="add_button">
                   Done
                 </button>
               </div>
             </form>
-
-
 
             
           </div>
