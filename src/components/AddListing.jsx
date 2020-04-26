@@ -35,6 +35,10 @@ export default class AddListings extends Component {
     navigate(-1)
   }
 
+  navigateHome = (e) => {
+    navigate(`/`)
+  }
+
   handleCategoryFood = (event) => {
     this.setState({ Category: "Food" });
     console.table(this.state.Category);
@@ -88,23 +92,28 @@ export default class AddListings extends Component {
       // style={{ color: "white", fontSize: "3.8em" }}
 
       <div>
-      <header className="share_header">
+
+<header className="share_header">
+<div className="share_header_wrapper">
 
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
 <div>
 <h1 className="category_header">
-<span>Add</span></h1>
+<span>Share Item</span></h1>
 </div>
 
+</div>
 </header>
 
         <div className="form_wrapper">
           <div className="form_container">
             <form onSubmit={this.handleSubmit} ref={this.formRef}>
-              <h1 style={{fontSize: '1.5rem'}}>
-                {" "}
-                What would you like <br /> to give?
-              </h1>
+              <div className="share_page_margin">
+                <h1>
+                  {" "}
+                  What would you like <br /> to give?
+                </h1>
+              </div>
 
               <div className="form_icons_wrapper">
                 <div className="food_icons_container">
@@ -189,8 +198,8 @@ export default class AddListings extends Component {
 
               <input type="hidden" name="id" value={Date.now()} />
 
-              <div className="button_wrapper">
-                <button type="submit" className="add_button" onClick={this.navigateHome}>
+              <div className="button_wrapper" onClick={this.navigateHome}>
+                <button type="submit" className="add_button">
                   Done
                 </button>
               </div>
