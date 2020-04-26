@@ -93,13 +93,13 @@ export default class AddListings extends Component {
 
       <div>
 
-<header className="share_header">
-<div className="share_header_wrapper">
+<header className="share_header_wrapper">
+<div className="share_header">
 
 <img src={BackArrow} onClick={this.navigatePrev} alt=""/>
 <div>
 <h1 className="category_header">
-<span>Share Item</span></h1>
+<span >Share Item</span></h1>
 </div>
 
 </div>
