@@ -17,6 +17,16 @@
     -webkit-box-shadow: -1px 73px 44px 34px rgba(0,0,0,0.32);
     -moz-box-shadow: -1px 73px 44px 34px rgba(0,0,0,0.32);
     box-shadow: -1px 73px 44px 34px rgba(0,0,0,0.32);
+
+  
+
+
+}
+
+
+.Category_names {
+    display: flex;
+    flex-basis: 1;
 }
 
 .Category_names p {
@@ -24,7 +34,7 @@
     margin: -0.1rem;
     
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     
     color: #0c9a46;
     font-weight: 500;

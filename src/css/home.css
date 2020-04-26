@@ -48,7 +48,7 @@ body {
 
 .Message_container {
     
-    height: 13vh;
+    height: 16vh;
     width: 100vw;
     /* margin-top: 1vh;
      */
@@ -104,6 +104,7 @@ body {
    /* background-color: rgb(255, 255, 255); */
    height: auto;
    background-color: rgba(245, 245, 245, 0);
+  
 }
 
 
@@ -130,7 +131,7 @@ body {
     height: 42vw;
     box-shadow: black;
     /* background-color: white; */
-    background-color: rgb(0, 0, 0);
+   
     /* border: solid 1.5px #cacaca; */
    
     
@@ -153,7 +154,8 @@ body {
 .data_container h2 {
     width: 100%;
     padding: 0.3rem;
-    background-color: rgba(75, 75, 75, 0.568);
+   
+    background-color: rgba(128, 112, 112, 0.568);
     margin-top: 70%;
     z-index: 10;
     position: absolute;
@@ -164,6 +166,7 @@ body {
     color: rgb(241, 241, 241);
     font-size: 1rem;
     letter-spacing: 0.06em;
+   
     
 
     
@@ -177,11 +180,7 @@ input {
     border: 3.5px solid #37b34a;
 
    width: 80vw;
-<<<<<<< HEAD
    height: 1.7rem;
-=======
-   height: 1.3rem;
->>>>>>> 49e958ace8ad982fa65572826f463f00c42fb011
    border-radius: 30px;
    
    /* box-shadow: 0px 2px 5px 1px #dadada; */
@@ -218,5 +217,20 @@ input::placeholder {
     height:0;
     transition: .3s;
     
+}
+
+
+.zoom {
+
+    
+    /* transition: all; */
+    transition-duration: 0.4s;
+    
+    transform: scale(150);
+    background-color: lime;
+    
+    
+
+   
 }
 

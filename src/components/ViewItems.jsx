@@ -48,6 +48,27 @@ getItems = (event) => {
   }
 
 
+  navigateFood = (e) => {
+    navigate(`/view-food`)
+  }
+
+  navigateItems = (e) => {
+    navigate(`/view-items`)
+  }
+ 
+ 
+  navigateAddlisting = (e) => {
+
+
+    navigate(`/addlisting`);
+
+    
+  };
+
+
+  
+
+
     render() {
         return (
             <div>

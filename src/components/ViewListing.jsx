@@ -7,7 +7,6 @@ import Axios from "axios";
 import "../css/viewlisting.css"
 
 import { MdDelete } from "react-icons/md";
-import { MdEdit } from "react-icons/md";
 import { MdQuestionAnswer } from "react-icons/md";
 import { MdSettingsPhone } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
@@ -36,17 +35,22 @@ export default class ViewBook extends Component {
     navigate(-1)
   }
 
+  navigateEdit = (e) => {
+    navigate(`/edit-listing/${this.props.id}`)
+  }
 
 
-  componentDidMount() {
-
-
+  getData = (e) => {
     Axios.get(`http://localhost:4000/api/user-listing/${this.props.id}`).then(res => {
 
       console.log(`http://localhost:4000/api/user-listing/${this.props.id}`);
       this.setState({ listing: res.data });
     });
+  }
 
+  componentDidMount() {
+
+    this.getData()
 
   }
 
@@ -127,49 +131,37 @@ export default class ViewBook extends Component {
 
 <header className="share_header">
 
-          <img src={BackArrow} onClick={this.navigatePrev} alt="" />
-          <div>
-            <h1 className="category_header"><span style={{ fontWeight: '500', fontSize: '1rem' }}></span>
-              <span>View</span></h1>
-          </div>
-
-          <MdDelete onClick={() => this.deleteDialog.show()}
-          style={{ color: "#37b34a", fontSize: "1.8em" }}/>
-
-          
-          <MdEdit  onClick={this.navigateEditListing} 
-          style={{ color: "#37b34a", fontSize: "1.8em" }}/>
+<img src={BackArrow} onClick={this.navigatePrev} alt=""/>
+<div>
+<h1 className="category_header"><span style={{fontWeight: '500', fontSize: '1rem'}}></span> 
+<span>View</span></h1>
+</div>
 
 
-<<<<<<< HEAD
+<div style={{position: 'absolute', right: '5%'}}>
 <MdDelete onClick={() => this.deleteDialog.show()}
-style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em" }}
+style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em"}}
 />
 
-<MdEdit onClick={() => this.deleteDialog.show()}
+<MdEdit onClick={this.navigateEdit}
 style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em" }}
 />
-
+</div>
 
 
 </header>
 
           
-=======
-        </header>
-
-
-
->>>>>>> 49e958ace8ad982fa65572826f463f00c42fb011
 
 
 
 
+      
 
         <SkyLight dialogStyles={appModal} hideOnOverlayClicked ref={ref => this.deleteDialog = ref} title="Are you sure you want to Delete?">
 
 
-          <button onClick={this.deleteData} >Yes</button>
+          <button className="delete_button" onClick={this.deleteData} >Yes</button>
 
         </SkyLight>
 
@@ -184,10 +176,7 @@ style={{ color: "rgb(97, 97, 97)", fontSize: "1.8em" }}
               description={item.Description}
               imagePath={item.Image}
               id={item._id}
-              unique_id={item.id}
             />
-
-            
           );
         })}
 
@@ -203,6 +192,8 @@ export class ShowListing extends React.Component {
   constructor(props) {
     super(props);
 
+
+    
 
     console.log(this.state);
   }

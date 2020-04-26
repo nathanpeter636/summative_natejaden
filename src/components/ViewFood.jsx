@@ -37,6 +37,8 @@ getFood = (event) => {
       
       )
 
+
+
       console.table(this.state.food)
   });
 
@@ -61,6 +63,22 @@ getFood = (event) => {
     
   };
 
+
+  navigateFood = (e) => {
+    navigate(`/view-food`)
+  }
+
+  navigateItems = (e) => {
+    navigate(`/view-items`)
+  }
+
+  navigateAddlisting = (e) => {
+
+
+    navigate(`/addlisting`);
+
+    
+  };
 
 
     render() {

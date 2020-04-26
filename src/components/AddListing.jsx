@@ -77,6 +77,10 @@ export default class AddListings extends Component {
     
   };
 
+  navigateHome = (e) => {
+    navigate('/')
+  }
+
 
 
   render() {
@@ -97,7 +101,7 @@ export default class AddListings extends Component {
         <div className="form_wrapper">
           <div className="form_container">
             <form onSubmit={this.handleSubmit} ref={this.formRef}>
-              <h1>
+              <h1 style={{fontSize: '1.5rem'}}>
                 {" "}
                 What would you like <br /> to give?
               </h1>
@@ -142,6 +146,7 @@ export default class AddListings extends Component {
                   rows="4"
                   cols="30"
                   name="Description"
+                  required
                 ></textarea>
 
                 <h1 style={{ color: "gray" }}>Contact details</h1>
@@ -185,7 +190,7 @@ export default class AddListings extends Component {
               <input type="hidden" name="id" value={Date.now()} />
 
               <div className="button_wrapper">
-                <button type="submit" className="add_button">
+                <button type="submit" className="add_button" onClick={this.navigateHome}>
                   Done
                 </button>
               </div>

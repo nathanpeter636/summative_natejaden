@@ -26,9 +26,12 @@ function App() {
 
       </Router>
 
+    
+    
 
 
-      <footer>Hello</footer>
+
+      
     </div>
   );
 }
