@@ -46,7 +46,7 @@ export default class AddListings extends Component {
   getData = event => {
     console.log("getData");
 
-    Axios.get(`http://localhost:4000/api/user-listing/${this.props.id}`).then(res => {
+    Axios.get(`https://trove-app-nathan.herokuapp.com/api/user-listing/${this.props.id}`).then(res => {
       this.setState({ updatelisting: res.data });
     });
   };
@@ -106,7 +106,7 @@ export default class AddListings extends Component {
         console.table(formData)
        
         Axios.put(
-        `http://localhost:4000/api/user-listing/${this.props.id}`,
+        `https://trove-app-nathan.herokuapp.com/api/user-listing/${this.props.id}`,
         formData, settings ).then(res => {
         console.table(res.data);
        
@@ -131,7 +131,7 @@ export default class AddListings extends Component {
       getData = event => {
         console.log("getData");
     
-        Axios.get(`http://localhost:4000/api/user-listing/${this.props.id}`).then(res => {
+        Axios.get(`https://trove-app-nathan.herokuapp.com/api/user-listing/${this.props.id}`).then(res => {
           console.table(res.data);
           this.setState({ updatelisting: res.data });
         });
@@ -155,7 +155,7 @@ export default class AddListings extends Component {
     
         // this.state = {  deleteButtonClicked: false};
     
-        Axios.delete(`http://localhost:4000/api/user-listing/${this.props.id}`).then(
+        Axios.delete(`https://trove-app-nathan.herokuapp.com/api/user-listing/${this.props.id}`).then(
           res => {
             console.table(res.data);
     
@@ -187,7 +187,7 @@ export default class AddListings extends Component {
     
         console.log(this.props.id);
     
-            // // Axios.put(http://localhost:4000/api/users/${this.props.id})
+            // // Axios.put(https://trove-app-nathan.herokuapp.com/api/users/${this.props.id})
             // // .then( res=> {
             // //     console.table(this.props.id)
       

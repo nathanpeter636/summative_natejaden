@@ -32,7 +32,7 @@ constructor(props) {
 
 getFood = (event) => {
     
-    Axios.get("http://localhost:4000/api/user-listing")
+    Axios.get("https://trove-app-nathan.herokuapp.com/api/user-listing")
   .then((res) => {
     this.setState({
       food: res.data.filter(data => data.Category === "Food") }
@@ -216,7 +216,7 @@ export class ShowFood extends React.Component {
               <div className="listing_box_container" onClick={this.navigateViewlisting}>
 
               <img className="listing_image_display"
-          src={"http://localhost:4000/assets/" + this.props.imagePath}
+          src={"https://trove-app-nathan.herokuapp.com/assets/" + this.props.imagePath}
           alt=""
         />
         

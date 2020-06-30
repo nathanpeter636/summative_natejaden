@@ -64,9 +64,9 @@ export default class ViewBook extends Component {
   componentDidMount() {
 
 
-    Axios.get(`http://localhost:4000/api/user-listing/${this.props.id}`).then(res => {
+    Axios.get(`https://trove-app-nathan.herokuapp.com/api/user-listing/${this.props.id}`).then(res => {
 
-      console.log(`http://localhost:4000/api/user-listing/${this.props.id}`);
+      console.log(`https://trove-app-nathan.herokuapp.com/api/user-listing/${this.props.id}`);
       this.setState({ listing: res.data });
     });
 
@@ -80,7 +80,7 @@ export default class ViewBook extends Component {
 
     // this.state = {  deleteButtonClicked: false};
 
-    Axios.delete(`http://localhost:4000/api/user-listing/${this.props.id}`).then(
+    Axios.delete(`https://trove-app-nathan.herokuapp.com/api/user-listing/${this.props.id}`).then(
       res => {
         console.table(res.data);
 
@@ -321,7 +321,7 @@ export class ShowListing extends React.Component {
 
 
         <img className="listing_image"
-          src={"http://localhost:4000/assets/" + this.props.imagePath}
+          src={"https://trove-app-nathan.herokuapp.com/assets/" + this.props.imagePath}
           alt=""
         />
 

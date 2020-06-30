@@ -73,7 +73,7 @@ export default class AddListings extends Component {
     };
 
     Axios.post(
-      "http://localhost:4000/api/user-listing",
+      "https://trove-app-nathan.herokuapp.com/api/user-listing",
       formData,
       settings
     ).then((res) => {});
